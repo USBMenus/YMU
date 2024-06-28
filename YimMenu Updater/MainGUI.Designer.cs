@@ -79,7 +79,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImage = YimMenu_Updater.Properties.Resources.titlebar_buttons;
             ClientSize = new Size(1118, 628);
             Controls.Add(minBtn);
             Controls.Add(CloseBtn);
