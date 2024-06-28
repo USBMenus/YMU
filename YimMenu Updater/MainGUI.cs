@@ -17,7 +17,6 @@ namespace YimUpdater
 
     public partial class MainGUI : Form
     {
-        public static ResourceManager rm;
         public bool drag;
         public MainGUI()
         {
