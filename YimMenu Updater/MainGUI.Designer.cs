@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainGUI));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges44 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges45 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges46 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges57 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges49 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges50 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges47 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges48 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges55 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges56 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges53 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges54 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges51 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges52 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pictureBox1 = new PictureBox();
             CloseBtn = new Button();
             minBtn = new Button();
@@ -58,17 +58,18 @@
             deleteCache = new Guna.UI2.WinForms.Guna2Button();
             downloadYimMenu = new Guna.UI2.WinForms.Guna2Button();
             LuaScripts_Tab = new TabPage();
-            logoImage = new Guna.UI2.WinForms.Guna2ImageButton();
-            programTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            Addons_Tab = new TabPage();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            Addons_Tab = new TabPage();
             guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
+            guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             HorseMenu_Tab = new TabPage();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
+            logoImage = new Guna.UI2.WinForms.Guna2ImageButton();
+            programTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlToolTip1 = new Guna.UI2.WinForms.Guna2HtmlToolTip();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             guna2TabControl1.SuspendLayout();
             YimMenu_Tab.SuspendLayout();
@@ -129,7 +130,7 @@
             guna2TabControl1.Margin = new Padding(0);
             guna2TabControl1.Name = "guna2TabControl1";
             guna2TabControl1.SelectedIndex = 0;
-            guna2TabControl1.Size = new Size(1044, 566);
+            guna2TabControl1.Size = new Size(1044, 540);
             guna2TabControl1.TabButtonHoverState.BorderColor = Color.Empty;
             guna2TabControl1.TabButtonHoverState.FillColor = Color.FromArgb(171, 75, 40);
             guna2TabControl1.TabButtonHoverState.Font = new Font("Segoe UI Semibold", 10F);
@@ -161,14 +162,14 @@
             YimMenu_Tab.Location = new Point(4, 44);
             YimMenu_Tab.Name = "YimMenu_Tab";
             YimMenu_Tab.Padding = new Padding(3);
-            YimMenu_Tab.Size = new Size(1036, 518);
+            YimMenu_Tab.Size = new Size(1036, 492);
             YimMenu_Tab.TabIndex = 0;
             YimMenu_Tab.Text = "YimMenu";
             // 
             // howToGuide
             // 
             howToGuide.BorderRadius = 10;
-            howToGuide.CustomizableEdges = customizableEdges39;
+            howToGuide.CustomizableEdges = customizableEdges1;
             howToGuide.DisabledState.BorderColor = Color.DarkGray;
             howToGuide.DisabledState.CustomBorderColor = Color.DarkGray;
             howToGuide.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -178,7 +179,7 @@
             howToGuide.ForeColor = Color.White;
             howToGuide.Location = new Point(447, 6);
             howToGuide.Name = "howToGuide";
-            howToGuide.ShadowDecoration.CustomizableEdges = customizableEdges40;
+            howToGuide.ShadowDecoration.CustomizableEdges = customizableEdges2;
             howToGuide.Size = new Size(141, 45);
             howToGuide.TabIndex = 3;
             howToGuide.Text = "YimMenu How-To";
@@ -186,7 +187,7 @@
             // uninstallYimMenu
             // 
             uninstallYimMenu.BorderRadius = 10;
-            uninstallYimMenu.CustomizableEdges = customizableEdges41;
+            uninstallYimMenu.CustomizableEdges = customizableEdges3;
             uninstallYimMenu.DisabledState.BorderColor = Color.DarkGray;
             uninstallYimMenu.DisabledState.CustomBorderColor = Color.DarkGray;
             uninstallYimMenu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -196,7 +197,7 @@
             uninstallYimMenu.ForeColor = Color.White;
             uninstallYimMenu.Location = new Point(300, 6);
             uninstallYimMenu.Name = "uninstallYimMenu";
-            uninstallYimMenu.ShadowDecoration.CustomizableEdges = customizableEdges42;
+            uninstallYimMenu.ShadowDecoration.CustomizableEdges = customizableEdges4;
             uninstallYimMenu.Size = new Size(141, 45);
             uninstallYimMenu.TabIndex = 2;
             uninstallYimMenu.Text = "Uninstall YimMenu";
@@ -204,7 +205,7 @@
             // deleteCache
             // 
             deleteCache.BorderRadius = 10;
-            deleteCache.CustomizableEdges = customizableEdges43;
+            deleteCache.CustomizableEdges = customizableEdges5;
             deleteCache.DisabledState.BorderColor = Color.DarkGray;
             deleteCache.DisabledState.CustomBorderColor = Color.DarkGray;
             deleteCache.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -214,7 +215,7 @@
             deleteCache.ForeColor = Color.White;
             deleteCache.Location = new Point(153, 6);
             deleteCache.Name = "deleteCache";
-            deleteCache.ShadowDecoration.CustomizableEdges = customizableEdges44;
+            deleteCache.ShadowDecoration.CustomizableEdges = customizableEdges6;
             deleteCache.Size = new Size(141, 45);
             deleteCache.TabIndex = 1;
             deleteCache.Text = "Delete Cache";
@@ -222,7 +223,7 @@
             // downloadYimMenu
             // 
             downloadYimMenu.BorderRadius = 10;
-            downloadYimMenu.CustomizableEdges = customizableEdges45;
+            downloadYimMenu.CustomizableEdges = customizableEdges7;
             downloadYimMenu.DisabledState.BorderColor = Color.DarkGray;
             downloadYimMenu.DisabledState.CustomBorderColor = Color.DarkGray;
             downloadYimMenu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -232,7 +233,7 @@
             downloadYimMenu.ForeColor = Color.White;
             downloadYimMenu.Location = new Point(6, 6);
             downloadYimMenu.Name = "downloadYimMenu";
-            downloadYimMenu.ShadowDecoration.CustomizableEdges = customizableEdges46;
+            downloadYimMenu.ShadowDecoration.CustomizableEdges = customizableEdges8;
             downloadYimMenu.Size = new Size(141, 45);
             downloadYimMenu.TabIndex = 0;
             downloadYimMenu.Text = "Download YimMenu";
@@ -244,9 +245,143 @@
             LuaScripts_Tab.Controls.Add(guna2Button1);
             LuaScripts_Tab.Location = new Point(4, 44);
             LuaScripts_Tab.Name = "LuaScripts_Tab";
-            LuaScripts_Tab.Size = new Size(1036, 518);
+            LuaScripts_Tab.Size = new Size(1036, 492);
             LuaScripts_Tab.TabIndex = 1;
             LuaScripts_Tab.Text = "Lua Scripts";
+            // 
+            // guna2Button2
+            // 
+            guna2Button2.BorderRadius = 10;
+            guna2Button2.CustomizableEdges = customizableEdges9;
+            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button2.FillColor = Color.FromArgb(155, 0, 0);
+            guna2Button2.Font = new Font("Segoe UI", 9F);
+            guna2Button2.ForeColor = Color.White;
+            guna2Button2.Location = new Point(153, 6);
+            guna2Button2.Name = "guna2Button2";
+            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            guna2Button2.Size = new Size(141, 45);
+            guna2Button2.TabIndex = 1;
+            guna2Button2.Text = "Get Ultimate Menu";
+            guna2Button2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // guna2Button1
+            // 
+            guna2Button1.BorderRadius = 10;
+            guna2Button1.CustomizableEdges = customizableEdges11;
+            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.FillColor = Color.FromArgb(155, 0, 0);
+            guna2Button1.Font = new Font("Segoe UI", 9F);
+            guna2Button1.ForeColor = Color.White;
+            guna2Button1.Location = new Point(6, 6);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            guna2Button1.Size = new Size(141, 45);
+            guna2Button1.TabIndex = 0;
+            guna2Button1.Text = "Get Extras Addon";
+            guna2Button1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // Addons_Tab
+            // 
+            Addons_Tab.BackColor = Color.FromArgb(30, 30, 30);
+            Addons_Tab.Controls.Add(guna2Button5);
+            Addons_Tab.Controls.Add(guna2Button4);
+            Addons_Tab.Controls.Add(guna2Button3);
+            Addons_Tab.Location = new Point(4, 44);
+            Addons_Tab.Name = "Addons_Tab";
+            Addons_Tab.Size = new Size(1036, 492);
+            Addons_Tab.TabIndex = 2;
+            Addons_Tab.Text = "Addons";
+            // 
+            // guna2Button5
+            // 
+            guna2Button5.BorderRadius = 10;
+            guna2Button5.CustomizableEdges = customizableEdges13;
+            guna2Button5.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button5.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button5.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button5.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button5.FillColor = Color.FromArgb(155, 0, 0);
+            guna2Button5.Font = new Font("Segoe UI", 9F);
+            guna2Button5.ForeColor = Color.White;
+            guna2Button5.Location = new Point(300, 6);
+            guna2Button5.Name = "guna2Button5";
+            guna2Button5.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            guna2Button5.Size = new Size(141, 45);
+            guna2Button5.TabIndex = 3;
+            guna2Button5.Text = "Get YimASI";
+            guna2Button5.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // guna2Button4
+            // 
+            guna2Button4.BorderRadius = 10;
+            guna2Button4.CustomizableEdges = customizableEdges15;
+            guna2Button4.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button4.FillColor = Color.FromArgb(155, 0, 0);
+            guna2Button4.Font = new Font("Segoe UI", 9F);
+            guna2Button4.ForeColor = Color.White;
+            guna2Button4.Location = new Point(153, 6);
+            guna2Button4.Name = "guna2Button4";
+            guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            guna2Button4.Size = new Size(141, 45);
+            guna2Button4.TabIndex = 2;
+            guna2Button4.Text = "Install XML's";
+            guna2Button4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // guna2Button3
+            // 
+            guna2Button3.BorderRadius = 10;
+            guna2Button3.CustomizableEdges = customizableEdges17;
+            guna2Button3.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button3.FillColor = Color.FromArgb(155, 0, 0);
+            guna2Button3.Font = new Font("Segoe UI", 9F);
+            guna2Button3.ForeColor = Color.White;
+            guna2Button3.Location = new Point(6, 6);
+            guna2Button3.Name = "guna2Button3";
+            guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            guna2Button3.Size = new Size(141, 45);
+            guna2Button3.TabIndex = 1;
+            guna2Button3.Text = "Install Animations";
+            guna2Button3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // HorseMenu_Tab
+            // 
+            HorseMenu_Tab.BackColor = Color.FromArgb(30, 30, 30);
+            HorseMenu_Tab.Location = new Point(4, 44);
+            HorseMenu_Tab.Name = "HorseMenu_Tab";
+            HorseMenu_Tab.Size = new Size(1036, 492);
+            HorseMenu_Tab.TabIndex = 3;
+            HorseMenu_Tab.Text = "HorseMenu";
+            // 
+            // tabPage1
+            // 
+            tabPage1.BackColor = Color.FromArgb(30, 30, 30);
+            tabPage1.Location = new Point(4, 44);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Size = new Size(1036, 492);
+            tabPage1.TabIndex = 4;
+            tabPage1.Text = "Tools";
+            // 
+            // tabPage2
+            // 
+            tabPage2.BackColor = Color.FromArgb(30, 30, 30);
+            tabPage2.Location = new Point(4, 44);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Size = new Size(1036, 492);
+            tabPage2.TabIndex = 5;
+            tabPage2.Text = "Settings";
             // 
             // logoImage
             // 
@@ -259,7 +394,7 @@
             logoImage.Location = new Point(521, -3);
             logoImage.Name = "logoImage";
             logoImage.PressedState.ImageSize = new Size(64, 64);
-            logoImage.ShadowDecoration.CustomizableEdges = customizableEdges57;
+            logoImage.ShadowDecoration.CustomizableEdges = customizableEdges19;
             logoImage.Size = new Size(71, 53);
             logoImage.TabIndex = 5;
             // 
@@ -276,139 +411,10 @@
             programTitle.TabIndex = 6;
             programTitle.Text = "YimMenu Updater";
             // 
-            // Addons_Tab
+            // guna2HtmlToolTip1
             // 
-            Addons_Tab.BackColor = Color.FromArgb(30, 30, 30);
-            Addons_Tab.Controls.Add(guna2Button5);
-            Addons_Tab.Controls.Add(guna2Button4);
-            Addons_Tab.Controls.Add(guna2Button3);
-            Addons_Tab.Location = new Point(4, 44);
-            Addons_Tab.Name = "Addons_Tab";
-            Addons_Tab.Size = new Size(1036, 518);
-            Addons_Tab.TabIndex = 2;
-            Addons_Tab.Text = "Addons";
-            // 
-            // guna2Button1
-            // 
-            guna2Button1.BorderRadius = 10;
-            guna2Button1.CustomizableEdges = customizableEdges49;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.FromArgb(155, 0, 0);
-            guna2Button1.Font = new Font("Segoe UI", 9F);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(6, 6);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges50;
-            guna2Button1.Size = new Size(141, 45);
-            guna2Button1.TabIndex = 0;
-            guna2Button1.Text = "Get Extras Addon";
-            guna2Button1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            // 
-            // guna2Button2
-            // 
-            guna2Button2.BorderRadius = 10;
-            guna2Button2.CustomizableEdges = customizableEdges47;
-            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button2.FillColor = Color.FromArgb(155, 0, 0);
-            guna2Button2.Font = new Font("Segoe UI", 9F);
-            guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(153, 6);
-            guna2Button2.Name = "guna2Button2";
-            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges48;
-            guna2Button2.Size = new Size(141, 45);
-            guna2Button2.TabIndex = 1;
-            guna2Button2.Text = "Get Ultimate Menu";
-            guna2Button2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            // 
-            // guna2Button3
-            // 
-            guna2Button3.BorderRadius = 10;
-            guna2Button3.CustomizableEdges = customizableEdges55;
-            guna2Button3.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button3.FillColor = Color.FromArgb(155, 0, 0);
-            guna2Button3.Font = new Font("Segoe UI", 9F);
-            guna2Button3.ForeColor = Color.White;
-            guna2Button3.Location = new Point(6, 6);
-            guna2Button3.Name = "guna2Button3";
-            guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges56;
-            guna2Button3.Size = new Size(141, 45);
-            guna2Button3.TabIndex = 1;
-            guna2Button3.Text = "Install Animations";
-            guna2Button3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            // 
-            // guna2Button4
-            // 
-            guna2Button4.BorderRadius = 10;
-            guna2Button4.CustomizableEdges = customizableEdges53;
-            guna2Button4.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button4.FillColor = Color.FromArgb(155, 0, 0);
-            guna2Button4.Font = new Font("Segoe UI", 9F);
-            guna2Button4.ForeColor = Color.White;
-            guna2Button4.Location = new Point(153, 6);
-            guna2Button4.Name = "guna2Button4";
-            guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges54;
-            guna2Button4.Size = new Size(141, 45);
-            guna2Button4.TabIndex = 2;
-            guna2Button4.Text = "Install XML's";
-            guna2Button4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            // 
-            // guna2Button5
-            // 
-            guna2Button5.BorderRadius = 10;
-            guna2Button5.CustomizableEdges = customizableEdges51;
-            guna2Button5.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button5.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button5.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button5.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button5.FillColor = Color.FromArgb(155, 0, 0);
-            guna2Button5.Font = new Font("Segoe UI", 9F);
-            guna2Button5.ForeColor = Color.White;
-            guna2Button5.Location = new Point(300, 6);
-            guna2Button5.Name = "guna2Button5";
-            guna2Button5.ShadowDecoration.CustomizableEdges = customizableEdges52;
-            guna2Button5.Size = new Size(141, 45);
-            guna2Button5.TabIndex = 3;
-            guna2Button5.Text = "Get YimASI";
-            guna2Button5.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            // 
-            // HorseMenu_Tab
-            // 
-            HorseMenu_Tab.BackColor = Color.FromArgb(30, 30, 30);
-            HorseMenu_Tab.Location = new Point(4, 44);
-            HorseMenu_Tab.Name = "HorseMenu_Tab";
-            HorseMenu_Tab.Size = new Size(1036, 518);
-            HorseMenu_Tab.TabIndex = 3;
-            HorseMenu_Tab.Text = "HorseMenu";
-            // 
-            // tabPage1
-            // 
-            tabPage1.BackColor = Color.FromArgb(30, 30, 30);
-            tabPage1.Location = new Point(4, 44);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Size = new Size(1036, 518);
-            tabPage1.TabIndex = 4;
-            tabPage1.Text = "Tools";
-            // 
-            // tabPage2
-            // 
-            tabPage2.BackColor = Color.FromArgb(30, 30, 30);
-            tabPage2.Location = new Point(4, 44);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Size = new Size(1036, 518);
-            tabPage2.TabIndex = 5;
-            tabPage2.Text = "Settings";
+            guna2HtmlToolTip1.AllowLinksHandling = true;
+            guna2HtmlToolTip1.MaximumSize = new Size(0, 0);
             // 
             // MainGUI
             // 
@@ -464,5 +470,6 @@
         private TabPage HorseMenu_Tab;
         private TabPage tabPage1;
         private TabPage tabPage2;
+        private Guna.UI2.WinForms.Guna2HtmlToolTip guna2HtmlToolTip1;
     }
 }
