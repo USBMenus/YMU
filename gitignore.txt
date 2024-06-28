@@ -1,4 +1,0 @@
-
-.vs
-YimMenu Updater/bin
-YimMenu Updater/obj
