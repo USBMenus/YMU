@@ -29,30 +29,33 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainGUI));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pictureBox1 = new PictureBox();
             CloseBtn = new Button();
             minBtn = new Button();
             guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             YimMenu_Tab = new TabPage();
+            progressBar1 = new Guna.UI2.WinForms.Guna2ProgressBar();
             howToGuide = new Guna.UI2.WinForms.Guna2Button();
             uninstallYimMenu = new Guna.UI2.WinForms.Guna2Button();
             deleteCache = new Guna.UI2.WinForms.Guna2Button();
@@ -69,7 +72,6 @@
             tabPage2 = new TabPage();
             logoImage = new Guna.UI2.WinForms.Guna2ImageButton();
             programTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlToolTip1 = new Guna.UI2.WinForms.Guna2HtmlToolTip();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             guna2TabControl1.SuspendLayout();
             YimMenu_Tab.SuspendLayout();
@@ -126,7 +128,7 @@
             guna2TabControl1.Controls.Add(tabPage1);
             guna2TabControl1.Controls.Add(tabPage2);
             guna2TabControl1.ItemSize = new Size(173, 40);
-            guna2TabControl1.Location = new Point(40, 50);
+            guna2TabControl1.Location = new Point(40, 81);
             guna2TabControl1.Margin = new Padding(0);
             guna2TabControl1.Name = "guna2TabControl1";
             guna2TabControl1.SelectedIndex = 0;
@@ -166,10 +168,29 @@
             YimMenu_Tab.TabIndex = 0;
             YimMenu_Tab.Text = "YimMenu";
             // 
+            // progressBar1
+            // 
+            progressBar1.AutoRoundedCorners = true;
+            progressBar1.BorderRadius = 10;
+            progressBar1.CustomizableEdges = customizableEdges19;
+            progressBar1.FillColor = Color.FromArgb(20, 20, 20);
+            progressBar1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            progressBar1.Location = new Point(412, 53);
+            progressBar1.Name = "progressBar1";
+            progressBar1.ProgressColor = Color.FromArgb(155, 0, 0);
+            progressBar1.ProgressColor2 = Color.FromArgb(157, 74, 40);
+            progressBar1.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            progressBar1.ShowText = true;
+            progressBar1.Size = new Size(300, 22);
+            progressBar1.TabIndex = 4;
+            progressBar1.Text = "progressBar1";
+            progressBar1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            progressBar1.Visible = false;
+            // 
             // howToGuide
             // 
             howToGuide.BorderRadius = 10;
-            howToGuide.CustomizableEdges = customizableEdges20;
+            howToGuide.CustomizableEdges = customizableEdges1;
             howToGuide.DisabledState.BorderColor = Color.DarkGray;
             howToGuide.DisabledState.CustomBorderColor = Color.DarkGray;
             howToGuide.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -179,7 +200,7 @@
             howToGuide.ForeColor = Color.White;
             howToGuide.Location = new Point(447, 6);
             howToGuide.Name = "howToGuide";
-            howToGuide.ShadowDecoration.CustomizableEdges = customizableEdges21;
+            howToGuide.ShadowDecoration.CustomizableEdges = customizableEdges2;
             howToGuide.Size = new Size(141, 45);
             howToGuide.TabIndex = 3;
             howToGuide.Text = "YimMenu How-To";
@@ -188,7 +209,7 @@
             // uninstallYimMenu
             // 
             uninstallYimMenu.BorderRadius = 10;
-            uninstallYimMenu.CustomizableEdges = customizableEdges22;
+            uninstallYimMenu.CustomizableEdges = customizableEdges3;
             uninstallYimMenu.DisabledState.BorderColor = Color.DarkGray;
             uninstallYimMenu.DisabledState.CustomBorderColor = Color.DarkGray;
             uninstallYimMenu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -198,7 +219,7 @@
             uninstallYimMenu.ForeColor = Color.White;
             uninstallYimMenu.Location = new Point(300, 6);
             uninstallYimMenu.Name = "uninstallYimMenu";
-            uninstallYimMenu.ShadowDecoration.CustomizableEdges = customizableEdges23;
+            uninstallYimMenu.ShadowDecoration.CustomizableEdges = customizableEdges4;
             uninstallYimMenu.Size = new Size(141, 45);
             uninstallYimMenu.TabIndex = 2;
             uninstallYimMenu.Text = "Uninstall YimMenu";
@@ -207,7 +228,7 @@
             // deleteCache
             // 
             deleteCache.BorderRadius = 10;
-            deleteCache.CustomizableEdges = customizableEdges24;
+            deleteCache.CustomizableEdges = customizableEdges5;
             deleteCache.DisabledState.BorderColor = Color.DarkGray;
             deleteCache.DisabledState.CustomBorderColor = Color.DarkGray;
             deleteCache.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -217,7 +238,7 @@
             deleteCache.ForeColor = Color.White;
             deleteCache.Location = new Point(153, 6);
             deleteCache.Name = "deleteCache";
-            deleteCache.ShadowDecoration.CustomizableEdges = customizableEdges25;
+            deleteCache.ShadowDecoration.CustomizableEdges = customizableEdges6;
             deleteCache.Size = new Size(141, 45);
             deleteCache.TabIndex = 1;
             deleteCache.Text = "Delete Cache";
@@ -226,7 +247,7 @@
             // downloadYimMenu
             // 
             downloadYimMenu.BorderRadius = 10;
-            downloadYimMenu.CustomizableEdges = customizableEdges26;
+            downloadYimMenu.CustomizableEdges = customizableEdges7;
             downloadYimMenu.DisabledState.BorderColor = Color.DarkGray;
             downloadYimMenu.DisabledState.CustomBorderColor = Color.DarkGray;
             downloadYimMenu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -236,7 +257,7 @@
             downloadYimMenu.ForeColor = Color.White;
             downloadYimMenu.Location = new Point(6, 6);
             downloadYimMenu.Name = "downloadYimMenu";
-            downloadYimMenu.ShadowDecoration.CustomizableEdges = customizableEdges27;
+            downloadYimMenu.ShadowDecoration.CustomizableEdges = customizableEdges8;
             downloadYimMenu.Size = new Size(141, 45);
             downloadYimMenu.TabIndex = 0;
             downloadYimMenu.Text = "Download YimMenu";
@@ -256,7 +277,7 @@
             // downloadUltimateMenu
             // 
             downloadUltimateMenu.BorderRadius = 10;
-            downloadUltimateMenu.CustomizableEdges = customizableEdges28;
+            downloadUltimateMenu.CustomizableEdges = customizableEdges9;
             downloadUltimateMenu.DisabledState.BorderColor = Color.DarkGray;
             downloadUltimateMenu.DisabledState.CustomBorderColor = Color.DarkGray;
             downloadUltimateMenu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -266,7 +287,7 @@
             downloadUltimateMenu.ForeColor = Color.White;
             downloadUltimateMenu.Location = new Point(153, 6);
             downloadUltimateMenu.Name = "downloadUltimateMenu";
-            downloadUltimateMenu.ShadowDecoration.CustomizableEdges = customizableEdges29;
+            downloadUltimateMenu.ShadowDecoration.CustomizableEdges = customizableEdges10;
             downloadUltimateMenu.Size = new Size(141, 45);
             downloadUltimateMenu.TabIndex = 1;
             downloadUltimateMenu.Text = "Get Ultimate Menu";
@@ -276,7 +297,7 @@
             // downloadExtras
             // 
             downloadExtras.BorderRadius = 10;
-            downloadExtras.CustomizableEdges = customizableEdges30;
+            downloadExtras.CustomizableEdges = customizableEdges11;
             downloadExtras.DisabledState.BorderColor = Color.DarkGray;
             downloadExtras.DisabledState.CustomBorderColor = Color.DarkGray;
             downloadExtras.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -286,7 +307,7 @@
             downloadExtras.ForeColor = Color.White;
             downloadExtras.Location = new Point(6, 6);
             downloadExtras.Name = "downloadExtras";
-            downloadExtras.ShadowDecoration.CustomizableEdges = customizableEdges31;
+            downloadExtras.ShadowDecoration.CustomizableEdges = customizableEdges12;
             downloadExtras.Size = new Size(141, 45);
             downloadExtras.TabIndex = 0;
             downloadExtras.Text = "Get Extras Addon";
@@ -308,7 +329,7 @@
             // guna2Button5
             // 
             guna2Button5.BorderRadius = 10;
-            guna2Button5.CustomizableEdges = customizableEdges32;
+            guna2Button5.CustomizableEdges = customizableEdges13;
             guna2Button5.DisabledState.BorderColor = Color.DarkGray;
             guna2Button5.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button5.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -318,7 +339,7 @@
             guna2Button5.ForeColor = Color.White;
             guna2Button5.Location = new Point(300, 6);
             guna2Button5.Name = "guna2Button5";
-            guna2Button5.ShadowDecoration.CustomizableEdges = customizableEdges33;
+            guna2Button5.ShadowDecoration.CustomizableEdges = customizableEdges14;
             guna2Button5.Size = new Size(141, 45);
             guna2Button5.TabIndex = 3;
             guna2Button5.Text = "Get YimASI";
@@ -327,7 +348,7 @@
             // guna2Button4
             // 
             guna2Button4.BorderRadius = 10;
-            guna2Button4.CustomizableEdges = customizableEdges34;
+            guna2Button4.CustomizableEdges = customizableEdges15;
             guna2Button4.DisabledState.BorderColor = Color.DarkGray;
             guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -337,7 +358,7 @@
             guna2Button4.ForeColor = Color.White;
             guna2Button4.Location = new Point(153, 6);
             guna2Button4.Name = "guna2Button4";
-            guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges35;
+            guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges16;
             guna2Button4.Size = new Size(141, 45);
             guna2Button4.TabIndex = 2;
             guna2Button4.Text = "Install XML's";
@@ -346,7 +367,7 @@
             // downloadAnimations
             // 
             downloadAnimations.BorderRadius = 10;
-            downloadAnimations.CustomizableEdges = customizableEdges36;
+            downloadAnimations.CustomizableEdges = customizableEdges17;
             downloadAnimations.DisabledState.BorderColor = Color.DarkGray;
             downloadAnimations.DisabledState.CustomBorderColor = Color.DarkGray;
             downloadAnimations.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -356,7 +377,7 @@
             downloadAnimations.ForeColor = Color.White;
             downloadAnimations.Location = new Point(6, 6);
             downloadAnimations.Name = "downloadAnimations";
-            downloadAnimations.ShadowDecoration.CustomizableEdges = customizableEdges37;
+            downloadAnimations.ShadowDecoration.CustomizableEdges = customizableEdges18;
             downloadAnimations.Size = new Size(141, 45);
             downloadAnimations.TabIndex = 1;
             downloadAnimations.Text = "Install Animations";
@@ -398,10 +419,10 @@
             logoImage.Image = YimMenu_Updater.Properties.Resources.icon;
             logoImage.ImageOffset = new Point(0, 0);
             logoImage.ImageRotate = 0F;
-            logoImage.Location = new Point(521, -3);
+            logoImage.Location = new Point(527, -1);
             logoImage.Name = "logoImage";
             logoImage.PressedState.ImageSize = new Size(64, 64);
-            logoImage.ShadowDecoration.CustomizableEdges = customizableEdges38;
+            logoImage.ShadowDecoration.CustomizableEdges = customizableEdges21;
             logoImage.Size = new Size(71, 53);
             logoImage.TabIndex = 5;
             // 
@@ -418,11 +439,6 @@
             programTitle.TabIndex = 6;
             programTitle.Text = "YimMenu Updater";
             // 
-            // guna2HtmlToolTip1
-            // 
-            guna2HtmlToolTip1.AllowLinksHandling = true;
-            guna2HtmlToolTip1.MaximumSize = new Size(0, 0);
-            // 
             // MainGUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -430,6 +446,7 @@
             BackColor = Color.FromArgb(30, 30, 30);
             BackgroundImage = YimMenu_Updater.Properties.Resources.titlebar_buttons;
             ClientSize = new Size(1118, 628);
+            Controls.Add(progressBar1);
             Controls.Add(programTitle);
             Controls.Add(logoImage);
             Controls.Add(guna2TabControl1);
@@ -477,6 +494,7 @@
         private TabPage HorseMenu_Tab;
         private TabPage tabPage1;
         private TabPage tabPage2;
-        private Guna.UI2.WinForms.Guna2HtmlToolTip guna2HtmlToolTip1;
+        private Guna.UI2.WinForms.Guna2ProgressBar progressBar1;
+        private Guna.UI2.WinForms.Guna2ProgressBar guna2ProgressBar1;
     }
 }

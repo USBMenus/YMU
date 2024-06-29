@@ -14,6 +14,7 @@ using System.Windows.Forms.VisualStyles;
 using System.IO;
 using System.Net.Http;
 using System.Net;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace YimUpdater
 {
@@ -150,14 +151,34 @@ namespace YimUpdater
 
         private void DownloadFile(string url, string path, string successMessage)
         {
+            WebClient client = new WebClient();
+
+            // Subscribe to the DownloadProgressChanged event to update the progress bar
+            client.DownloadProgressChanged += (sender, e) =>
+            {
+                progressBar1.Visible = true;
+                // Assuming progressBar1 is your ProgressBar control on the form
+                progressBar1.Value = e.ProgressPercentage;
+            };
+
             try
             {
-                new WebClient().DownloadFile(url, path);
-                MessageBox.Show(successMessage + path);
+                // Download the file asynchronously
+                client.DownloadFileAsync(new Uri(url), path);
+
+                // Display a message when the download completes
+                client.DownloadFileCompleted += (sender, e) =>
+                {
+                    MessageBox.Show(successMessage + path);
+
+                    progressBar1.Visible = false;
+                };
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
+
+                progressBar1.Visible = false;
             }
         }
 
