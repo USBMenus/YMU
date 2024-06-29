@@ -15,6 +15,7 @@ using System.IO;
 using System.Net.Http;
 using System.Net;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.IO.Compression;
 
 namespace YimUpdater
 {
@@ -39,6 +40,14 @@ namespace YimUpdater
             pictureBox1.MouseUp += TitleBarMouseUp;
             pictureBox1.MouseMove += TitleBarDrag;
             pictureBox1.MouseDown += TitleBarMouseDown;
+            howToGuide.Click += howToGuide_Click;
+            uninstallYimMenu.Click += uninstallYimMenu_Click;
+            deleteCache.Click += deleteCache_Click;
+            downloadYimMenu.Click += downloadYimMenu_Click;
+            downloadUltimateMenu.Click += downloadUltimateMenu_Click;
+            downloadExtras.Click += downloadExtras_Click;
+            downloadAnimations.Click += downloadAnimations_Click;
+            installXMLs.Click += installXMLs_Click;
         }
 
         private void CloseBtn_Click(object? sender, EventArgs e)
@@ -255,6 +264,70 @@ namespace YimUpdater
             DownloadFile("https://raw.githubusercontent.com/L7NEG/Ultimate-Menu/main/YimMenu/Ultimate_Menu%20For%20YimMenu%20V2.1%201.68.lua",
                          Path.Combine(yimMenuFolder, "animDictsCompact.json"),
                          "Animations Dictionary downloaded successfully to ");
+        }
+
+        private void DownloadAndExtractZip(string url, string zipFilePath, string fileName, string extractDirectory)
+        {
+            WebClient client = new WebClient();
+
+            // Subscribe to the DownloadProgressChanged event to update the progress bar
+            client.DownloadProgressChanged += (sender, e) =>
+            {
+                progressBar1.Visible = true;
+                // Assuming progressBar1 is your ProgressBar control on the form
+                progressBar1.Value = e.ProgressPercentage;
+            };
+
+            try
+            {
+                // Download the zip file asynchronously
+                client.DownloadFileAsync(new Uri(url), zipFilePath);
+
+                // Handle completion of download
+                client.DownloadFileCompleted += (sender, e) =>
+                {
+                    progressBar1.Visible = false;
+
+                    // Extract the zip file to the specified directory
+                    try
+                    {
+                        ZipFile.ExtractToDirectory(zipFilePath, extractDirectory);
+                        MessageBox.Show(fileName + " Download completed!\n\n Extracted " + fileName + " to " + extractDirectory);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error extracting zip file: " + ex.Message);
+                    }
+                };
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error downloading file: " + ex.Message);
+                progressBar1.Visible = false;
+            }
+        }
+
+        private void installXMLs_Click(object sender, EventArgs e)
+        {
+            // For xml_maps.zip
+            string urlMaps = "http://bedrock.root.sx/xml_maps.zip";
+            string zipFileNameMaps = "xml_maps";
+            string zipFileNameM = "XML Maps";
+            string extractDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "YimMenu");
+
+            DownloadAndExtractZip(urlMaps, zipFileNameMaps, zipFileNameM, extractDirectory);
+
+            // For xml_vehicles.zip
+            string urlVehicles = "http://bedrock.root.sx/xml_vehicles.zip";
+            string zipFileNameVehicles = "xml_vehicles";
+            string zipFileNameV = "XML Vehicles";
+
+            DownloadAndExtractZip(urlVehicles, zipFileNameVehicles, zipFileNameV, extractDirectory);
+        }
+
+        private void installYimASI_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
