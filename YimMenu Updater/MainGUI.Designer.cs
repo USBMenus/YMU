@@ -319,7 +319,7 @@
             installYimASI.TabIndex = 3;
             installYimASI.Text = "Install YimASI";
             installYimASI.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            installYimASI.Click += installYimASI_Click;
+            
             // 
             // installXMLs
             // 

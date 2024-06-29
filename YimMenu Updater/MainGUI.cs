@@ -16,6 +16,10 @@ using System.Net.Http;
 using System.Net;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.IO.Compression;
+using Microsoft.Win32;
+using System.Diagnostics;
+using System.Reflection;
+using System.Security.Principal;
 
 namespace YimUpdater
 {
@@ -48,6 +52,7 @@ namespace YimUpdater
             downloadExtras.Click += downloadExtras_Click;
             downloadAnimations.Click += downloadAnimations_Click;
             installXMLs.Click += installXMLs_Click;
+            installYimASI.Click += installYimASI_Click;
         }
 
         private void CloseBtn_Click(object? sender, EventArgs e)
@@ -325,9 +330,64 @@ namespace YimUpdater
             DownloadAndExtractZip(urlVehicles, zipFileNameVehicles, zipFileNameV, extractDirectory);
         }
 
+        private bool IsAdministrator()
+        {
+            WindowsIdentity identity = WindowsIdentity.GetCurrent();
+            WindowsPrincipal principal = new WindowsPrincipal(identity);
+            return principal.IsInRole(WindowsBuiltInRole.Administrator);
+        }
+
+        private void RestartAsAdmin()
+        {
+            try
+            {
+                string exeName = Assembly.GetEntryAssembly().Location;
+                ProcessStartInfo startInfo = new ProcessStartInfo(exeName);
+                startInfo.Verb = "runas"; // Run as administrator
+                Process.Start(startInfo);
+                Application.Exit(); // Exit current instance
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error restarting application as administrator: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void installYimASI_Click(object sender, EventArgs e)
         {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Executable Files|*.exe";
+            openFileDialog.Title = "Find & Select GTA5.exe";
 
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string gta5Path = openFileDialog.FileName;
+
+                string yimASIUrl = "https://github.com/xesdoog/YimASI/releases/download/release/WTSAPI32.dll";
+                string scriptHookUrl = "http://bedrock.root.sx/ScriptHookV.dll";
+
+                string gtaFolder = Path.GetDirectoryName(gta5Path); // Get the directory where GTA5.exe is located
+                string scriptHookFilePath = Path.Combine(gtaFolder, "ScriptHookV.dll");
+                string yimASIFilePath = Path.Combine(gtaFolder, "YimASI.dll");
+
+                if (!IsAdministrator())
+                {
+                    // Prompt user to restart as admin
+                    DialogResult result = MessageBox.Show("This operation requires administrative privileges to install to your game path, Restart your application as administrator and try again!",
+                                                          "Admin Privileges Required", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    if (result == DialogResult.OK)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+
+                DownloadFile(yimASIUrl, yimASIFilePath, "YimASI downloaded successfully to: ");
+                DownloadFile(scriptHookUrl, scriptHookFilePath, "ScriptHookV downloaded successfully to: ");
+            }
         }
     }
 }
