@@ -368,7 +368,7 @@ namespace YimUpdater
 
                 string gtaFolder = Path.GetDirectoryName(gta5Path); // Get the directory where GTA5.exe is located
                 string scriptHookFilePath = Path.Combine(gtaFolder, "ScriptHookV.dll");
-                string yimASIFilePath = Path.Combine(gtaFolder, "YimASI.dll");
+                string yimASIFilePath = Path.Combine(gtaFolder, "WTSAPI32.dll");
 
                 if (!IsAdministrator())
                 {
