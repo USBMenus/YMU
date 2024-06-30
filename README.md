@@ -5,7 +5,7 @@ YimMenu Updater is an All-in-One Updater/Downloader for YimMenu, designed to sim
 ## Features
 
 ### YimMenu
-- Downloading YimMenu
+- Download YimMenu
 - Uninstalling YimMenu
 - Deleting YimMenu Cache
 - How to Use Guide
@@ -13,3 +13,11 @@ YimMenu Updater is an All-in-One Updater/Downloader for YimMenu, designed to sim
 ### Lua Scripts
 - Automatically Generated buttons from the YimMenu-Lua Repository
 - 1-Click installer for your favorite Lua Scripts
+
+### Addons
+- Install Animations
+- Install XML Maps & Vehicles
+- Install YimASI
+
+### HorseMenu
+- Download HorseMenu
