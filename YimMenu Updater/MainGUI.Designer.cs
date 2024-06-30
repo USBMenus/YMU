@@ -45,15 +45,15 @@ namespace YimUpdater
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pictureBox1 = new PictureBox();
             CloseBtn = new Button();
             minBtn = new Button();
@@ -71,13 +71,13 @@ namespace YimUpdater
             HorseMenu_Tab = new TabPage();
             downloadHorseMenu = new Guna.UI2.WinForms.Guna2Button();
             tabPage1 = new TabPage();
+            injectDLL = new Guna.UI2.WinForms.Guna2Button();
+            launchGame = new Guna.UI2.WinForms.Guna2Button();
+            processName = new Guna.UI2.WinForms.Guna2TextBox();
             tabPage2 = new TabPage();
             progressBar1 = new Guna.UI2.WinForms.Guna2ProgressBar();
             logoImage = new Guna.UI2.WinForms.Guna2ImageButton();
             programTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            processName = new Guna.UI2.WinForms.Guna2TextBox();
-            launchGame = new Guna.UI2.WinForms.Guna2Button();
-            injectDLL = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             guna2TabControl1.SuspendLayout();
             YimMenu_Tab.SuspendLayout();
@@ -364,14 +364,79 @@ namespace YimUpdater
             // tabPage1
             // 
             tabPage1.BackColor = Color.FromArgb(30, 30, 30);
+            tabPage1.Controls.Add(processName);
             tabPage1.Controls.Add(injectDLL);
             tabPage1.Controls.Add(launchGame);
-            tabPage1.Controls.Add(processName);
             tabPage1.Location = new Point(4, 44);
             tabPage1.Name = "tabPage1";
             tabPage1.Size = new Size(1036, 492);
             tabPage1.TabIndex = 4;
             tabPage1.Text = "Tools";
+            // 
+            // injectDLL
+            // 
+            injectDLL.BorderRadius = 10;
+            injectDLL.CustomizableEdges = customizableEdges19;
+            injectDLL.DisabledState.BorderColor = Color.DarkGray;
+            injectDLL.DisabledState.CustomBorderColor = Color.DarkGray;
+            injectDLL.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            injectDLL.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            injectDLL.FillColor = Color.FromArgb(155, 0, 0);
+            injectDLL.Font = new Font("Segoe UI", 9F);
+            injectDLL.ForeColor = Color.White;
+            injectDLL.Location = new Point(509, 6);
+            injectDLL.Margin = new Padding(6);
+            injectDLL.Name = "injectDLL";
+            injectDLL.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            injectDLL.Size = new Size(155, 45);
+            injectDLL.TabIndex = 6;
+            injectDLL.Text = "Select/Inject DLL";
+            injectDLL.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // launchGame
+            // 
+            launchGame.BorderRadius = 10;
+            launchGame.CustomizableEdges = customizableEdges21;
+            launchGame.DisabledState.BorderColor = Color.DarkGray;
+            launchGame.DisabledState.CustomBorderColor = Color.DarkGray;
+            launchGame.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            launchGame.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            launchGame.FillColor = Color.FromArgb(0, 155, 0);
+            launchGame.Font = new Font("Segoe UI", 9F);
+            launchGame.ForeColor = Color.White;
+            launchGame.Location = new Point(340, 6);
+            launchGame.Margin = new Padding(6);
+            launchGame.Name = "launchGame";
+            launchGame.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            launchGame.Size = new Size(155, 45);
+            launchGame.TabIndex = 5;
+            launchGame.Text = "Launch Game";
+            launchGame.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // processName
+            // 
+            processName.BorderColor = Color.FromArgb(155, 0, 0);
+            processName.BorderRadius = 10;
+            processName.BorderThickness = 2;
+            processName.CustomizableEdges = customizableEdges17;
+            processName.DefaultText = "";
+            processName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            processName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            processName.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            processName.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            processName.FillColor = Color.FromArgb(55, 55, 55);
+            processName.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            processName.Font = new Font("Segoe UI", 9F);
+            processName.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            processName.Location = new Point(6, 6);
+            processName.Margin = new Padding(6);
+            processName.Name = "processName";
+            processName.PasswordChar = '\0';
+            processName.PlaceholderText = "Enter a Process name (Ex:  GTA5.exe)";
+            processName.SelectedText = "";
+            processName.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            processName.Size = new Size(322, 45);
+            processName.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -428,71 +493,6 @@ namespace YimUpdater
             programTitle.Size = new Size(157, 27);
             programTitle.TabIndex = 6;
             programTitle.Text = "YimMenu Updater";
-            // 
-            // processName
-            // 
-            processName.BorderColor = Color.FromArgb(155, 0, 0);
-            processName.BorderRadius = 10;
-            processName.BorderThickness = 2;
-            processName.CustomizableEdges = customizableEdges21;
-            processName.DefaultText = "";
-            processName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            processName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            processName.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            processName.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            processName.FillColor = Color.FromArgb(55, 55, 55);
-            processName.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            processName.Font = new Font("Segoe UI", 9F);
-            processName.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            processName.Location = new Point(6, 6);
-            processName.Margin = new Padding(6);
-            processName.Name = "processName";
-            processName.PasswordChar = '\0';
-            processName.PlaceholderText = "Enter a Process name (Ex:  GTA5.exe)";
-            processName.SelectedText = "";
-            processName.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            processName.Size = new Size(322, 45);
-            processName.TabIndex = 0;
-            // 
-            // launchGame
-            // 
-            launchGame.BorderRadius = 10;
-            launchGame.CustomizableEdges = customizableEdges19;
-            launchGame.DisabledState.BorderColor = Color.DarkGray;
-            launchGame.DisabledState.CustomBorderColor = Color.DarkGray;
-            launchGame.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            launchGame.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            launchGame.FillColor = Color.FromArgb(0, 155, 0);
-            launchGame.Font = new Font("Segoe UI", 9F);
-            launchGame.ForeColor = Color.White;
-            launchGame.Location = new Point(340, 6);
-            launchGame.Margin = new Padding(6);
-            launchGame.Name = "launchGame";
-            launchGame.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            launchGame.Size = new Size(155, 45);
-            launchGame.TabIndex = 5;
-            launchGame.Text = "Launch Game";
-            launchGame.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            // 
-            // injectDLL
-            // 
-            injectDLL.BorderRadius = 10;
-            injectDLL.CustomizableEdges = customizableEdges17;
-            injectDLL.DisabledState.BorderColor = Color.DarkGray;
-            injectDLL.DisabledState.CustomBorderColor = Color.DarkGray;
-            injectDLL.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            injectDLL.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            injectDLL.FillColor = Color.FromArgb(155, 0, 0);
-            injectDLL.Font = new Font("Segoe UI", 9F);
-            injectDLL.ForeColor = Color.White;
-            injectDLL.Location = new Point(509, 6);
-            injectDLL.Margin = new Padding(6);
-            injectDLL.Name = "injectDLL";
-            injectDLL.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            injectDLL.Size = new Size(155, 45);
-            injectDLL.TabIndex = 6;
-            injectDLL.Text = "Select/Inject DLL";
-            injectDLL.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
             // MainGUI
             // 

@@ -44,8 +44,7 @@ namespace YimUpdater
             installXMLs.Click += installXMLs_Click;
             downloadAnimations.Click += downloadAnimations_Click;
             downloadHorseMenu.Click += downloadHorseMenu_Click;
-
-            //Startup scripts below
+            injectDLL.Click += injectDLL_Click;
 
         }
 
@@ -520,6 +519,84 @@ namespace YimUpdater
             string dllPath = Path.Combine(downloadsFolder, "HorseMenu.dll");
 
             DownloadFile(file, "https://github.com/YimMenu/HorseMenu/releases/download/nightly/" + file, null, file + " downloaded to ", true);
+        }
+
+        private Process GetProcessByName(string processName)
+        {
+            var processes = Process.GetProcesses();
+            foreach (var process in processes)
+            {
+                Console.WriteLine($"Checking process: " + processName);
+                if (process.ProcessName.Equals(processName, StringComparison.OrdinalIgnoreCase))
+                {
+                    return process;
+                }
+            }
+            return null;
+        }
+
+        private void injectDLL_Click(object sender, EventArgs e)
+        {
+            string processNameText = processName.Text.Trim(); // Trim any extra spaces
+            string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string injectorPath = Path.Combine(baseDirectory, "dllinject.exe"); // The injector executable
+
+            if (string.IsNullOrEmpty(processNameText))
+            {
+                MessageBox.Show("Please enter a process name.");
+                return;
+            }
+
+            // Open a file dialog to select the DLL
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\Downloads",
+                Filter = "DLL files (*.dll)|*.dll",
+                Title = "Select a DLL file"
+            };
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string dllPath = openFileDialog.FileName;
+
+                try
+                {
+                    // Start the injector process with elevated privileges
+                    ProcessStartInfo startInfo = new ProcessStartInfo
+                    {
+                        FileName = injectorPath,
+                        Arguments = $"--process-name \"{processNameText}.exe\" --inject \"{dllPath}\"",
+                        Verb = "runas", // Run as administrator
+                        UseShellExecute = true // Required to run as admin
+                    };
+
+                    Process.Start(startInfo);
+
+                    string outputPath = @"inject-log.txt";
+
+                    try
+                    {
+                        using (StreamWriter writer = new StreamWriter(outputPath))
+                        {
+                            writer.WriteLine($"Command to execute: {injectorPath} --process-name \"{processNameText}.exe\" --inject \"{dllPath}\"");
+                        }
+
+                        Console.WriteLine("Command written to file: " + outputPath);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("An error occurred: " + ex.Message);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred: {ex.Message}");
+                }
+            }
+            else
+            {
+                MessageBox.Show("DLL selection was cancelled.");
+            }
         }
     }
 }
