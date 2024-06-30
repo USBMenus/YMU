@@ -134,7 +134,7 @@ namespace YimUpdater
             string dllUrl = "https://github.com/YimMenu/YimMenu/releases/download/nightly/" + file;
             string dllPath = Path.Combine(downloadsFolder, "YimMenu.dll");
 
-            DownloadFile(file, dllUrl, dllPath, "YimMenu.dll downloaded to ", true);
+            DownloadFile(file, dllUrl, null, "YimMenu.dll downloaded to ", true);
         }
 
         private void uninstallYimMenu_Click(object? sender, EventArgs e)
@@ -160,26 +160,39 @@ namespace YimUpdater
 
         private void DownloadFile(string file, string url, string path, string successMessage, bool ofd = false)
         {
-            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
-            string defaultlocation = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Downloads";
-            folderBrowserDialog.InitialDirectory = defaultlocation;
-            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            string downloadPath = path;
+
+            // If path is not set, show the FolderBrowserDialog
+            if (string.IsNullOrEmpty(path))
             {
-                var currentpath = folderBrowserDialog.SelectedPath;
-                RestClient httpc = new RestClient();
-                RestRequest request = new RestRequest(url);
-                byte[] help = httpc.DownloadData(request);
-                if (help == null)
+                FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+
+                if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show("File failed to download File: " + url, "Error");
+                    downloadPath = folderBrowserDialog.SelectedPath;
                 }
-                if (!(help == null))
+                else
                 {
-                    File.WriteAllBytes(currentpath + "\\" + file, help);
-                    MessageBox.Show("The file " + file + " has successfully downloaded. Yay :)", "Success");
+                    MessageBox.Show("No folder selected. Download canceled.", "Canceled");
+                    return;
                 }
             }
 
+            // Proceed with download if the path is set
+            RestClient httpc = new RestClient();
+            RestRequest request = new RestRequest(url);
+            byte[] help = httpc.DownloadData(request);
+
+            if (help == null)
+            {
+                MessageBox.Show("File failed to download. URL: " + url, "Error");
+            }
+            else
+            {
+                string fullPath = Path.Combine(downloadPath, file);
+                File.WriteAllBytes(fullPath, help);
+                MessageBox.Show(file + " has been downloaded successfully to " + downloadPath, "Success");
+            }
         }
 
         private void DeleteDirectory(string path, string successMessage)
@@ -226,39 +239,33 @@ namespace YimUpdater
         {
             string appDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             string yimMenuFolder = Path.Combine(appDataFolder, "YimMenu", "scripts");
+            string file1 = "Extras-Addon.lua";
+            string file2 = "Extras-data.lua";
+            string file3 = "json.lua";
 
             // Download each file using the DownloadFile method
-            DownloadFile("Extras-Addon.lua", "https://raw.githubusercontent.com/Deadlineem/Extras-Addon-for-YimMenu/main/",
-                         Path.Combine(yimMenuFolder, "Extras-Addon.lua"),
-                         "Extras-Addon.lua downloaded successfully to ");
+            DownloadFile(file1, "https://raw.githubusercontent.com/Deadlineem/Extras-Addon-for-YimMenu/main/" + file1, yimMenuFolder, file1 + " downloaded successfully to ", true);
 
-            DownloadFile("Extras-data.lua", "https://raw.githubusercontent.com/Deadlineem/Extras-Addon-for-YimMenu/main/",
-                         Path.Combine(yimMenuFolder, "Extras-data.lua"),
-                         "Extras-data.lua downloaded successfully to ");
+            DownloadFile(file2, "https://raw.githubusercontent.com/Deadlineem/Extras-Addon-for-YimMenu/main/" + file2, yimMenuFolder, file2 + " downloaded successfully to ", true);
 
-            DownloadFile("json.lua", "https://raw.githubusercontent.com/Deadlineem/Extras-Addon-for-YimMenu/main/",
-                         Path.Combine(yimMenuFolder, "json.lua"),
-                         "json.lua downloaded successfully to ");
+            DownloadFile(file3, "https://raw.githubusercontent.com/Deadlineem/Extras-Addon-for-YimMenu/main/" + file3, yimMenuFolder, file3 + " downloaded successfully to ", true);
         }
 
         private void downloadUltimateMenu_Click(object sender, EventArgs e)
         {
             string appDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             string yimMenuFolder = Path.Combine(appDataFolder, "YimMenu", "scripts");
-
-            DownloadFile("Ultimate_Menu For YimMenu V2.1 1.68.lua", "https://raw.githubusercontent.com/L7NEG/Ultimate-Menu/main/YimMenu/",
-                         Path.Combine(yimMenuFolder, "UltimateMenu-v2.1.lua"),
-                         "Ultimate Menu downloaded successfully to ");
+            string file = "Ultimate_Menu For YimMenu V2.1 1.68.lua";
+            DownloadFile(file, "https://raw.githubusercontent.com/L7NEG/Ultimate-Menu/main/YimMenu/" + file, yimMenuFolder, file + " downloaded successfully to ", true);
         }
 
         private void downloadAnimations_Click(object? sender, EventArgs e)
         {
             string appDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             string yimMenuFolder = Path.Combine(appDataFolder, "YimMenu");
+            string file = "animDictsCompact.json";
 
-            DownloadFile("animDictsCompact.json", "https://raw.githubusercontent.com/DurtyFree/gta-v-data-dumps/master/",
-                         Path.Combine(yimMenuFolder, "animDictsCompact.json"),
-                         "Animations Dictionary downloaded successfully to ");
+            DownloadFile(file, "https://raw.githubusercontent.com/DurtyFree/gta-v-data-dumps/master/" + file, yimMenuFolder, file + " downloaded successfully to ", true);
         }
 
         private void DownloadAndExtractZip(string url, string zipFilePath, string fileName, string extractDirectory)
@@ -508,10 +515,11 @@ namespace YimUpdater
         private void downloadHorseMenu_Click(object? sender, EventArgs e)
         {
             string downloadsFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads");
-            string dllUrl = "https://github.com/YimMenu/HorseMenu/releases/download/nightly/";
+            string file = "HorseMenu.dll";
+            string dllUrl = "https://github.com/YimMenu/HorseMenu/releases/download/nightly/" + file;
             string dllPath = Path.Combine(downloadsFolder, "HorseMenu.dll");
 
-            DownloadFile("HorseMenu.dll", dllUrl, dllPath, "HorseMenu.dll downloaded to ", true);
+            DownloadFile(file, "https://github.com/YimMenu/HorseMenu/releases/download/nightly/" + file, null, file + " downloaded to ", true);
         }
     }
 }
