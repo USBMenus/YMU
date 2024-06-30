@@ -1,4 +1,4 @@
-﻿using System.Data;
+using System.Data;
 using System.Resources;
 using System.Net;
 using System.IO.Compression;
@@ -191,7 +191,7 @@ namespace YimUpdater
         private void DeleteDirectory(string path, string successMessage)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to delete \'" + path + "\'?\nThis can NOT be undone!", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.No) 
+            if (result == DialogResult.No)
                 return;
 
             try
@@ -509,6 +509,15 @@ namespace YimUpdater
 
                 DownloadAndExtractZip(url, zipFilePath, fileName, extractDirectory);
             }
+        }
+
+        private void downloadHorseMenu_Click(object sender, EventArgs e)
+        {
+            string downloadsFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads");
+            string dllUrl = "https://github.com/YimMenu/HorseMenu/releases/download/nightly/HorseMenu.dll";
+            string dllPath = Path.Combine(downloadsFolder, "HorseMenu.dll");
+
+            DownloadFile(dllUrl, dllPath, "HorseMenu.dll downloaded to ", true);
         }
     }
 }
