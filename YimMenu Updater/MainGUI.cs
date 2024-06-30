@@ -1,12 +1,15 @@
 using System.Data;
 using System.Resources;
 using System.Net;
+using System.Windows.Forms;
+using Microsoft.Win32;
 using System.IO.Compression;
 using System.Diagnostics;
 using System.Reflection;
 using System.Security.Principal;
 using Newtonsoft.Json;
 using Guna.UI2.WinForms;
+using RestSharp;
 
 namespace YimUpdater
 {
@@ -18,12 +21,32 @@ namespace YimUpdater
         {
             InitializeComponent();
             InitializeFlowLayoutPanel();
-            LoadRepositories();
+            //LoadRepositories();
         }
 
         private void MainGUI_Load(object sender, EventArgs e)
         {
-            var rm = new ResourceManager("Images", this.GetType().Assembly);
+            //All events below
+            pictureBox1.MouseDown += TitleBarMouseDown;
+            pictureBox1.MouseMove += TitleBarDrag;
+            pictureBox1.MouseUp += TitleBarMouseUp;
+            CloseBtn.Click += CloseBtn_Click;
+            CloseBtn.MouseLeave += CloseBtn_Leave;
+            CloseBtn.MouseHover += CloseBtn_Hover;
+            minBtn.Click += MinBtn_Click;
+            minBtn.MouseLeave += MinBtn_Leave;
+            minBtn.MouseHover += MinBtn_Hover;
+            howToGuide.Click += howToGuide_Click;
+            uninstallYimMenu.Click += uninstallYimMenu_Click;
+            deleteCache.Click += deleteCache_Click;
+            downloadYimMenu.Click += downloadYimMenu_Click;
+            installYimASI.Click += installYimASI_Click;
+            installXMLs.Click += installXMLs_Click;
+            downloadAnimations.Click += downloadAnimations_Click;
+            downloadHorseMenu.Click += downloadHorseMenu_Click;
+
+            //Startup scripts below
+
         }
 
         private void CloseBtn_Click(object? sender, EventArgs e)
@@ -104,16 +127,17 @@ namespace YimUpdater
             drag = false;
         }
 
-        private void downloadYimMenu_Click(object sender, EventArgs e)
+        private void downloadYimMenu_Click(object? sender, EventArgs e)
         {
             string downloadsFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads");
-            string dllUrl = "https://github.com/YimMenu/YimMenu/releases/download/nightly/YimMenu.dll";
+            string file = "YimMenu.dll";
+            string dllUrl = "https://github.com/YimMenu/YimMenu/releases/download/nightly/" + file;
             string dllPath = Path.Combine(downloadsFolder, "YimMenu.dll");
 
-            DownloadFile(dllUrl, dllPath, "YimMenu.dll downloaded to ", true);
+            DownloadFile(file, dllUrl, dllPath, "YimMenu.dll downloaded to ", true);
         }
 
-        private void uninstallYimMenu_Click(object sender, EventArgs e)
+        private void uninstallYimMenu_Click(object? sender, EventArgs e)
         {
             string appDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             string yimMenuFolder = Path.Combine(appDataFolder, "YimMenu");
@@ -121,7 +145,7 @@ namespace YimUpdater
             DeleteDirectory(yimMenuFolder, "YimMenu has been uninstalled.");
         }
 
-        private void deleteCache_Click(object sender, EventArgs e)
+        private void deleteCache_Click(object? sender, EventArgs e)
         {
             string appDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             string cacheFolder = Path.Combine(appDataFolder, "YimMenu", "cache");
@@ -129,63 +153,33 @@ namespace YimUpdater
             DeleteDirectory(cacheFolder, "YimMenu's Cache has been deleted.");
         }
 
-        private void howToGuide_Click(object sender, EventArgs e)
+        private void howToGuide_Click(object? sender, EventArgs e)
         {
             ShowHowToGuide();
         }
 
-        private void DownloadFile(string url, string path, string successMessage, bool ofd = false)
+        private void DownloadFile(string file, string url, string path, string successMessage, bool ofd = false)
         {
-            if (ofd)
+            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            string defaultlocation = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Downloads";
+            folderBrowserDialog.InitialDirectory = defaultlocation;
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
             {
-                FolderBrowserDialog fbd = new FolderBrowserDialog();
-                fbd.Description = "Select Download Location";
-                DialogResult result = fbd.ShowDialog();
-
-                if (result != DialogResult.OK)
+                var currentpath = folderBrowserDialog.SelectedPath;
+                RestClient httpc = new RestClient();
+                RestRequest request = new RestRequest(url);
+                byte[] help = httpc.DownloadData(request);
+                if (help == null)
                 {
-                    MessageBox.Show("You canceled the download.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
+                    MessageBox.Show("File failed to download File: " + url, "Error");
                 }
-
-                path = fbd.SelectedPath;
-
-                if (string.IsNullOrEmpty(path))
+                if (!(help == null))
                 {
-                    MessageBox.Show("Download location cannot be empty.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
+                    File.WriteAllBytes(currentpath + "\\" + file, help);
+                    MessageBox.Show("The file " + file + " has successfully downloaded. Yay :)", "Success");
                 }
             }
 
-            WebClient client = new WebClient();
-
-            // Subscribe to the DownloadProgressChanged event to update the progress bar
-            client.DownloadProgressChanged += (sender, e) =>
-            {
-                progressBar1.Visible = true;
-                // Assuming progressBar1 is your ProgressBar control on the form
-                progressBar1.Value = e.ProgressPercentage;
-            };
-
-            try
-            {
-                // Download the file asynchronously
-                client.DownloadFileAsync(new Uri(url), path);
-
-                // Display a message when the download completes
-                client.DownloadFileCompleted += (sender, e) =>
-                {
-                    MessageBox.Show(successMessage + path);
-
-                    progressBar1.Visible = false;
-                };
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-
-                progressBar1.Visible = false;
-            }
         }
 
         private void DeleteDirectory(string path, string successMessage)
@@ -234,15 +228,15 @@ namespace YimUpdater
             string yimMenuFolder = Path.Combine(appDataFolder, "YimMenu", "scripts");
 
             // Download each file using the DownloadFile method
-            DownloadFile("https://raw.githubusercontent.com/Deadlineem/Extras-Addon-for-YimMenu/main/Extras-Addon.lua",
+            DownloadFile("Extras-Addon.lua", "https://raw.githubusercontent.com/Deadlineem/Extras-Addon-for-YimMenu/main/",
                          Path.Combine(yimMenuFolder, "Extras-Addon.lua"),
                          "Extras-Addon.lua downloaded successfully to ");
 
-            DownloadFile("https://raw.githubusercontent.com/Deadlineem/Extras-Addon-for-YimMenu/main/Extras-data.lua",
+            DownloadFile("Extras-data.lua", "https://raw.githubusercontent.com/Deadlineem/Extras-Addon-for-YimMenu/main/",
                          Path.Combine(yimMenuFolder, "Extras-data.lua"),
                          "Extras-data.lua downloaded successfully to ");
 
-            DownloadFile("https://raw.githubusercontent.com/Deadlineem/Extras-Addon-for-YimMenu/main/json.lua",
+            DownloadFile("json.lua", "https://raw.githubusercontent.com/Deadlineem/Extras-Addon-for-YimMenu/main/",
                          Path.Combine(yimMenuFolder, "json.lua"),
                          "json.lua downloaded successfully to ");
         }
@@ -252,17 +246,17 @@ namespace YimUpdater
             string appDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             string yimMenuFolder = Path.Combine(appDataFolder, "YimMenu", "scripts");
 
-            DownloadFile("https://raw.githubusercontent.com/L7NEG/Ultimate-Menu/main/YimMenu/Ultimate_Menu%20For%20YimMenu%20V2.1%201.68.lua",
+            DownloadFile("Ultimate_Menu For YimMenu V2.1 1.68.lua", "https://raw.githubusercontent.com/L7NEG/Ultimate-Menu/main/YimMenu/",
                          Path.Combine(yimMenuFolder, "UltimateMenu-v2.1.lua"),
                          "Ultimate Menu downloaded successfully to ");
         }
 
-        private void downloadAnimations_Click(object sender, EventArgs e)
+        private void downloadAnimations_Click(object? sender, EventArgs e)
         {
             string appDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             string yimMenuFolder = Path.Combine(appDataFolder, "YimMenu");
 
-            DownloadFile("https://raw.githubusercontent.com/L7NEG/Ultimate-Menu/main/YimMenu/Ultimate_Menu%20For%20YimMenu%20V2.1%201.68.lua",
+            DownloadFile("animDictsCompact.json", "https://raw.githubusercontent.com/DurtyFree/gta-v-data-dumps/master/",
                          Path.Combine(yimMenuFolder, "animDictsCompact.json"),
                          "Animations Dictionary downloaded successfully to ");
         }
@@ -318,7 +312,7 @@ namespace YimUpdater
             }
         }
 
-        private void installXMLs_Click(object sender, EventArgs e)
+        private void installXMLs_Click(object? sender, EventArgs e)
         {
             // For xml_maps.zip
             string urlMaps = "http://bedrock.root.sx/xml_maps.zip";
@@ -359,7 +353,7 @@ namespace YimUpdater
             }
         }
 
-        private void installYimASI_Click(object sender, EventArgs e)
+        private void installYimASI_Click(object? sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Executable Files|*.exe";
@@ -369,8 +363,8 @@ namespace YimUpdater
             {
                 string gta5Path = openFileDialog.FileName;
 
-                string yimASIUrl = "https://github.com/xesdoog/YimASI/releases/download/release/WTSAPI32.dll";
-                string scriptHookUrl = "http://bedrock.root.sx/ScriptHookV.dll";
+                string yimASIUrl = "https://github.com/xesdoog/YimASI/releases/download/release/";
+                string scriptHookUrl = "http://bedrock.root.sx/";
 
                 string gtaFolder = Path.GetDirectoryName(gta5Path); // Get the directory where GTA5.exe is located
                 string scriptHookFilePath = Path.Combine(gtaFolder, "ScriptHookV.dll");
@@ -391,8 +385,8 @@ namespace YimUpdater
                     }
                 }
 
-                DownloadFile(yimASIUrl, yimASIFilePath, "YimASI downloaded successfully to: ");
-                DownloadFile(scriptHookUrl, scriptHookFilePath, "ScriptHookV downloaded successfully to: ");
+                DownloadFile("WTSAPI32.dll", yimASIUrl, yimASIFilePath, "YimASI downloaded successfully to: ");
+                DownloadFile("ScriptHookV.dll", scriptHookUrl, scriptHookFilePath, "ScriptHookV downloaded successfully to: ");
             }
         }
 
@@ -511,13 +505,13 @@ namespace YimUpdater
             }
         }
 
-        private void downloadHorseMenu_Click(object sender, EventArgs e)
+        private void downloadHorseMenu_Click(object? sender, EventArgs e)
         {
             string downloadsFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads");
-            string dllUrl = "https://github.com/YimMenu/HorseMenu/releases/download/nightly/HorseMenu.dll";
+            string dllUrl = "https://github.com/YimMenu/HorseMenu/releases/download/nightly/";
             string dllPath = Path.Combine(downloadsFolder, "HorseMenu.dll");
 
-            DownloadFile(dllUrl, dllPath, "HorseMenu.dll downloaded to ", true);
+            DownloadFile("HorseMenu.dll", dllUrl, dllPath, "HorseMenu.dll downloaded to ", true);
         }
     }
 }
