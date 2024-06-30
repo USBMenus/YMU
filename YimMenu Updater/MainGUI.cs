@@ -10,6 +10,7 @@ using System.Security.Principal;
 using Newtonsoft.Json;
 using Guna.UI2.WinForms;
 using RestSharp;
+using Microsoft.VisualBasic;
 
 namespace YimUpdater
 {
@@ -45,6 +46,7 @@ namespace YimUpdater
             downloadAnimations.Click += downloadAnimations_Click;
             downloadHorseMenu.Click += downloadHorseMenu_Click;
             injectDLL.Click += injectDLL_Click;
+            launchGame.Click += launchGame_Click;
 
         }
 
@@ -540,10 +542,26 @@ namespace YimUpdater
             string processNameText = processName.Text.Trim(); // Trim any extra spaces
             string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
             string injectorPath = Path.Combine(baseDirectory, "dllinject.exe"); // The injector executable
+            bool procOpen = false;
 
             if (string.IsNullOrEmpty(processNameText))
             {
                 MessageBox.Show("Please enter a process name.");
+                return;
+            }
+
+            foreach (Process p in Process.GetProcesses())
+            {
+                //MessageBox.Show(p.ProcessName);
+                if (p.ProcessName.ToLower() == processNameText.ToLower())
+                {
+                    procOpen = true;
+                }
+            }
+
+            if (!procOpen)
+            {
+                MessageBox.Show(processNameText + " is not open", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -596,6 +614,100 @@ namespace YimUpdater
             else
             {
                 MessageBox.Show("DLL selection was cancelled.");
+            }
+        }
+
+        private void launchGame_Click(object sender, EventArgs e)
+        {
+            bool valid = false;
+            string game = processName.Text.ToLower();
+            string[] knownGames = new string[] { "gta5", "rdr2", "minecraft.windows"};
+
+            foreach (string knownGame in knownGames)
+            {
+                if (game == knownGame)
+                    valid = true;
+            }
+
+            if (!valid)
+            {
+                MessageBox.Show(game + " is not a known game.\nWe currently support:\ngta5\nrdr2\nminecraft.windows", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            switch (game)
+            {
+                
+                /*
+                Process To Start and Find games, maybe if its finds more than one
+                installation it will ask which one to start, i know for rdr2 and gta5 there is 
+                atleast 3 installation locations, epic games, steam and rockstar launcher.
+
+                As far as im aware Minecraft Bedrock is only avaiable on the Microsoft Store.
+                */
+                case "gta5":
+                    string[] found = new string[] { };
+                    string[] locations = new string[] { "SteamLibrary\\steamapps\\common\\Grand Theft Auto V\\", "Program Files\\Rockstar Games\\Grand Theft Auto V\\", "Program Files (x86)\\Steam\\steamapps\\common\\Grand Theft Auto V" };
+                    string exe = "GTAVLauncher.exe";
+                    foreach (DriveInfo drive in DriveInfo.GetDrives())
+                    {
+                        foreach (string location in locations)
+                        {
+                            string loc = drive.Name + location + exe;
+                            if (File.Exists(loc))
+                            {
+                                found.Append(loc);
+                                if (MessageBox.Show("Found " + loc + " would you like to launch it?", "Found", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                                {
+                                    try
+                                    {
+                                        ProcessStartInfo startInfo = new ProcessStartInfo
+                                        {
+                                            FileName = loc,
+                                            WorkingDirectory = drive.Name + location,
+                                            Verb = "runas",
+                                            UseShellExecute = true
+                                        };
+                                        Process proc = Process.Start(startInfo);
+                                    } catch (Exception ex)
+                                    {
+                                        MessageBox.Show("Couldnt start GTA 5 - " + ex.Message);
+                                    }
+                                    /*if (Interaction.Shell(loc, AppWinStyle.MinimizedFocus, false, -1) == 0)
+                                    {
+                                        MessageBox.Show("Failed To Launch GTA 5.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        return;
+                                    }
+                                    MessageBox.Show("Starting GTA 5", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                    if (found.Length > 0)
+                    {
+                        MessageBox.Show("Found Multiple Installs");
+                    }
+                    /*if (Interaction.Shell("explorer.exe shell:appsFolder\\Grand Theft Auto V", AppWinStyle.MinimizedFocus, false, -1) == 0)
+                    {
+                        MessageBox.Show("Failed To Launch Minecraft.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    MessageBox.Show("Starting Minecraft", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
+                    return;
+
+                case "rdr2":
+                    
+                    return;
+
+                case "minecraft.windows":
+                    if (Interaction.Shell("explorer.exe shell:appsFolder\\Microsoft.MinecraftUWP_8wekyb3d8bbwe!App", AppWinStyle.MinimizedFocus, false, -1) == 0)
+                    {
+                        MessageBox.Show("Failed To Launch Minecraft.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    MessageBox.Show("Starting Minecraft", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
             }
         }
     }

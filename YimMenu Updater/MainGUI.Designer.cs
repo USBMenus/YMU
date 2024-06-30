@@ -45,12 +45,12 @@ namespace YimUpdater
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -71,9 +71,9 @@ namespace YimUpdater
             HorseMenu_Tab = new TabPage();
             downloadHorseMenu = new Guna.UI2.WinForms.Guna2Button();
             tabPage1 = new TabPage();
+            processName = new Guna.UI2.WinForms.Guna2TextBox();
             injectDLL = new Guna.UI2.WinForms.Guna2Button();
             launchGame = new Guna.UI2.WinForms.Guna2Button();
-            processName = new Guna.UI2.WinForms.Guna2TextBox();
             tabPage2 = new TabPage();
             progressBar1 = new Guna.UI2.WinForms.Guna2ProgressBar();
             logoImage = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -373,6 +373,31 @@ namespace YimUpdater
             tabPage1.TabIndex = 4;
             tabPage1.Text = "Tools";
             // 
+            // processName
+            // 
+            processName.BorderColor = Color.FromArgb(155, 0, 0);
+            processName.BorderRadius = 10;
+            processName.BorderThickness = 2;
+            processName.CustomizableEdges = customizableEdges17;
+            processName.DefaultText = "";
+            processName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            processName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            processName.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            processName.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            processName.FillColor = Color.FromArgb(55, 55, 55);
+            processName.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            processName.Font = new Font("Segoe UI", 9F);
+            processName.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            processName.Location = new Point(6, 6);
+            processName.Margin = new Padding(6);
+            processName.Name = "processName";
+            processName.PasswordChar = '\0';
+            processName.PlaceholderText = "Enter a Process Name (Ex:  GTA5 or RDR2)";
+            processName.SelectedText = "";
+            processName.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            processName.Size = new Size(322, 45);
+            processName.TabIndex = 0;
+            // 
             // injectDLL
             // 
             injectDLL.BorderRadius = 10;
@@ -412,31 +437,6 @@ namespace YimUpdater
             launchGame.TabIndex = 5;
             launchGame.Text = "Launch Game";
             launchGame.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            // 
-            // processName
-            // 
-            processName.BorderColor = Color.FromArgb(155, 0, 0);
-            processName.BorderRadius = 10;
-            processName.BorderThickness = 2;
-            processName.CustomizableEdges = customizableEdges17;
-            processName.DefaultText = "";
-            processName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            processName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            processName.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            processName.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            processName.FillColor = Color.FromArgb(55, 55, 55);
-            processName.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            processName.Font = new Font("Segoe UI", 9F);
-            processName.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            processName.Location = new Point(6, 6);
-            processName.Margin = new Padding(6);
-            processName.Name = "processName";
-            processName.PasswordChar = '\0';
-            processName.PlaceholderText = "Enter a Process name (Ex:  GTA5.exe)";
-            processName.SelectedText = "";
-            processName.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            processName.Size = new Size(322, 45);
-            processName.TabIndex = 0;
             // 
             // tabPage2
             // 
