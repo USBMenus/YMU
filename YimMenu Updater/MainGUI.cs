@@ -20,6 +20,9 @@ using Microsoft.Win32;
 using System.Diagnostics;
 using System.Reflection;
 using System.Security.Principal;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using Guna.UI2.WinForms;
 
 namespace YimUpdater
 {
@@ -30,6 +33,8 @@ namespace YimUpdater
         public MainGUI()
         {
             InitializeComponent();
+            InitializeFlowLayoutPanel();
+            LoadRepositories();
         }
 
         private void MainGUI_Load(object sender, EventArgs e)
@@ -48,8 +53,8 @@ namespace YimUpdater
             uninstallYimMenu.Click += uninstallYimMenu_Click;
             deleteCache.Click += deleteCache_Click;
             downloadYimMenu.Click += downloadYimMenu_Click;
-            downloadUltimateMenu.Click += downloadUltimateMenu_Click;
-            downloadExtras.Click += downloadExtras_Click;
+            //downloadUltimateMenu.Click += downloadUltimateMenu_Click;
+            //downloadExtras.Click += downloadExtras_Click;
             downloadAnimations.Click += downloadAnimations_Click;
             installXMLs.Click += installXMLs_Click;
             installYimASI.Click += installYimASI_Click;
@@ -387,6 +392,121 @@ namespace YimUpdater
 
                 DownloadFile(yimASIUrl, yimASIFilePath, "YimASI downloaded successfully to: ");
                 DownloadFile(scriptHookUrl, scriptHookFilePath, "ScriptHookV downloaded successfully to: ");
+            }
+        }
+
+        public class Repository
+        {
+            public string Name { get; set; }
+            public string Html_Url { get; set; }
+        }
+
+        public class GitHubRepositories
+        {
+            private static readonly HttpClient client = new HttpClient();
+
+            public async Task<List<Repository>> FetchRepositoriesAsync()
+            {
+                string url = "https://api.github.com/orgs/YimMenu-Lua/repos?type=all";
+                client.DefaultRequestHeaders.UserAgent.ParseAdd("request");
+
+                var response = await client.GetStringAsync(url);
+                return JsonConvert.DeserializeObject<List<Repository>>(response);
+            }
+        }
+
+        private GitHubRepositories gitHubRepositories = new GitHubRepositories();
+        private FlowLayoutPanel flowLayoutPanel;
+        private List<Repository> customRepositories = new List<Repository>
+        {
+            new Repository { Name = "Extras Addon", Html_Url = "" },
+            new Repository { Name = "Ultimate Menu", Html_Url = "" }
+        };
+
+        private async void InitializeFlowLayoutPanel()
+        {
+            flowLayoutPanel = new FlowLayoutPanel
+            {
+                Dock = DockStyle.Fill,
+                FlowDirection = FlowDirection.LeftToRight,
+                WrapContents = true,
+                AutoScroll = true
+            };
+
+            LuaScripts_Tab.Controls.Add(flowLayoutPanel);
+
+            await LoadRepositories();
+        }
+
+        private async Task LoadRepositories()
+        {
+            var fetchedRepositories = await gitHubRepositories.FetchRepositoriesAsync();
+
+            // Exclude specific repositories from the fetched list
+            var excludedRepositoryNames = new List<string> { "Example", "submission" };
+            fetchedRepositories = fetchedRepositories.Where(repo => !excludedRepositoryNames.Contains(repo.Name)).ToList();
+
+            // Combine custom repositories and fetched repositories, with custom ones first
+            var allRepositories = customRepositories.Concat(fetchedRepositories).ToList();
+
+            foreach (var repo in allRepositories)
+            {
+                Guna2Button repoButton = new Guna2Button
+                {
+                    Text = repo.Name,
+                    Tag = new RepositoryTag { Repository = repo, Url = repo.Html_Url }, // Store repository info in Tag
+                    Size = new Size(155, 45),
+                    Margin = new Padding(6),
+                    BorderRadius = 10,
+                    FillColor = Color.FromArgb(155, 0, 0),
+                    Font = new Font("Segoe UI", 9F),
+                    ForeColor = Color.White,
+                    TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+                };
+
+                repoButton.DisabledState.BorderColor = Color.DarkGray;
+                repoButton.DisabledState.CustomBorderColor = Color.DarkGray;
+                repoButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+                repoButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+
+                flowLayoutPanel.Controls.Add(repoButton);
+
+                if (repo.Name == "Extras Addon")
+                {
+                    repoButton.Click += downloadExtras_Click;
+                }
+                else if (repo.Name == "Ultimate Menu")
+                {
+                    repoButton.Click += downloadUltimateMenu_Click;
+                }
+                else
+                {
+                    repoButton.Click += RepoButton_Click;
+                }
+            }
+        }
+
+        public class RepositoryTag
+        {
+            public Repository Repository { get; set; }
+            public string Url { get; set; }
+        }
+
+        private void RepoButton_Click(object sender, EventArgs e)
+        {
+            Guna2Button button = sender as Guna2Button;
+
+            // Retrieve repository information from Tag
+            var repoTag = button.Tag as RepositoryTag;
+            if (repoTag != null)
+            {
+                string url = repoTag.Url + "/archive/refs/heads/main.zip";
+                string fileName = repoTag.Repository.Name; // Use repo.Name as fileName
+                string tempPath = Path.GetTempPath();
+                string zipFilePath = Path.Combine(tempPath, $"{fileName}_main.zip");
+                string extractDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "YimMenu", "scripts");
+
+                DownloadAndExtractZip(url, zipFilePath, fileName, extractDirectory);
             }
         }
     }

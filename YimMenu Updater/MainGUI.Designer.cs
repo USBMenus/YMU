@@ -46,10 +46,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pictureBox1 = new PictureBox();
             CloseBtn = new Button();
             minBtn = new Button();
@@ -60,8 +56,6 @@
             deleteCache = new Guna.UI2.WinForms.Guna2Button();
             downloadYimMenu = new Guna.UI2.WinForms.Guna2Button();
             LuaScripts_Tab = new TabPage();
-            downloadUltimateMenu = new Guna.UI2.WinForms.Guna2Button();
-            downloadExtras = new Guna.UI2.WinForms.Guna2Button();
             Addons_Tab = new TabPage();
             installYimASI = new Guna.UI2.WinForms.Guna2Button();
             installXMLs = new Guna.UI2.WinForms.Guna2Button();
@@ -75,7 +69,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             guna2TabControl1.SuspendLayout();
             YimMenu_Tab.SuspendLayout();
-            LuaScripts_Tab.SuspendLayout();
             Addons_Tab.SuspendLayout();
             SuspendLayout();
             // 
@@ -179,10 +172,10 @@
             howToGuide.FillColor = Color.FromArgb(155, 0, 0);
             howToGuide.Font = new Font("Segoe UI", 9F);
             howToGuide.ForeColor = Color.White;
-            howToGuide.Location = new Point(447, 6);
+            howToGuide.Location = new Point(509, 6);
             howToGuide.Name = "howToGuide";
             howToGuide.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            howToGuide.Size = new Size(141, 45);
+            howToGuide.Size = new Size(155, 45);
             howToGuide.TabIndex = 3;
             howToGuide.Text = "YimMenu How-To";
             // 
@@ -197,10 +190,11 @@
             uninstallYimMenu.FillColor = Color.FromArgb(155, 0, 0);
             uninstallYimMenu.Font = new Font("Segoe UI", 9F);
             uninstallYimMenu.ForeColor = Color.White;
-            uninstallYimMenu.Location = new Point(300, 6);
+            uninstallYimMenu.Location = new Point(340, 6);
+            uninstallYimMenu.Margin = new Padding(6);
             uninstallYimMenu.Name = "uninstallYimMenu";
             uninstallYimMenu.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            uninstallYimMenu.Size = new Size(141, 45);
+            uninstallYimMenu.Size = new Size(155, 45);
             uninstallYimMenu.TabIndex = 2;
             uninstallYimMenu.Text = "Uninstall YimMenu";
             // 
@@ -215,10 +209,11 @@
             deleteCache.FillColor = Color.FromArgb(155, 0, 0);
             deleteCache.Font = new Font("Segoe UI", 9F);
             deleteCache.ForeColor = Color.White;
-            deleteCache.Location = new Point(153, 6);
+            deleteCache.Location = new Point(173, 6);
+            deleteCache.Margin = new Padding(6);
             deleteCache.Name = "deleteCache";
             deleteCache.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            deleteCache.Size = new Size(141, 45);
+            deleteCache.Size = new Size(155, 45);
             deleteCache.TabIndex = 1;
             deleteCache.Text = "Delete Cache";
             // 
@@ -234,60 +229,21 @@
             downloadYimMenu.Font = new Font("Segoe UI", 9F);
             downloadYimMenu.ForeColor = Color.White;
             downloadYimMenu.Location = new Point(6, 6);
+            downloadYimMenu.Margin = new Padding(6);
             downloadYimMenu.Name = "downloadYimMenu";
             downloadYimMenu.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            downloadYimMenu.Size = new Size(141, 45);
+            downloadYimMenu.Size = new Size(155, 45);
             downloadYimMenu.TabIndex = 0;
             downloadYimMenu.Text = "Download YimMenu";
             // 
             // LuaScripts_Tab
             // 
             LuaScripts_Tab.BackColor = Color.FromArgb(30, 30, 30);
-            LuaScripts_Tab.Controls.Add(downloadUltimateMenu);
-            LuaScripts_Tab.Controls.Add(downloadExtras);
             LuaScripts_Tab.Location = new Point(4, 44);
             LuaScripts_Tab.Name = "LuaScripts_Tab";
             LuaScripts_Tab.Size = new Size(1036, 492);
             LuaScripts_Tab.TabIndex = 1;
             LuaScripts_Tab.Text = "Lua Scripts";
-            // 
-            // downloadUltimateMenu
-            // 
-            downloadUltimateMenu.BorderRadius = 10;
-            downloadUltimateMenu.CustomizableEdges = customizableEdges9;
-            downloadUltimateMenu.DisabledState.BorderColor = Color.DarkGray;
-            downloadUltimateMenu.DisabledState.CustomBorderColor = Color.DarkGray;
-            downloadUltimateMenu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            downloadUltimateMenu.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            downloadUltimateMenu.FillColor = Color.FromArgb(155, 0, 0);
-            downloadUltimateMenu.Font = new Font("Segoe UI", 9F);
-            downloadUltimateMenu.ForeColor = Color.White;
-            downloadUltimateMenu.Location = new Point(153, 6);
-            downloadUltimateMenu.Name = "downloadUltimateMenu";
-            downloadUltimateMenu.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            downloadUltimateMenu.Size = new Size(141, 45);
-            downloadUltimateMenu.TabIndex = 1;
-            downloadUltimateMenu.Text = "Get Ultimate Menu";
-            downloadUltimateMenu.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            // 
-            // downloadExtras
-            // 
-            downloadExtras.BorderRadius = 10;
-            downloadExtras.CustomizableEdges = customizableEdges11;
-            downloadExtras.DisabledState.BorderColor = Color.DarkGray;
-            downloadExtras.DisabledState.CustomBorderColor = Color.DarkGray;
-            downloadExtras.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            downloadExtras.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            downloadExtras.FillColor = Color.FromArgb(155, 0, 0);
-            downloadExtras.Font = new Font("Segoe UI", 9F);
-            downloadExtras.ForeColor = Color.White;
-            downloadExtras.Location = new Point(6, 6);
-            downloadExtras.Name = "downloadExtras";
-            downloadExtras.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            downloadExtras.Size = new Size(141, 45);
-            downloadExtras.TabIndex = 0;
-            downloadExtras.Text = "Get Extras Addon";
-            downloadExtras.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
             // Addons_Tab
             // 
@@ -304,7 +260,7 @@
             // installYimASI
             // 
             installYimASI.BorderRadius = 10;
-            installYimASI.CustomizableEdges = customizableEdges13;
+            installYimASI.CustomizableEdges = customizableEdges9;
             installYimASI.DisabledState.BorderColor = Color.DarkGray;
             installYimASI.DisabledState.CustomBorderColor = Color.DarkGray;
             installYimASI.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -312,19 +268,19 @@
             installYimASI.FillColor = Color.FromArgb(155, 0, 0);
             installYimASI.Font = new Font("Segoe UI", 9F);
             installYimASI.ForeColor = Color.White;
-            installYimASI.Location = new Point(300, 6);
+            installYimASI.Location = new Point(340, 6);
+            installYimASI.Margin = new Padding(6);
             installYimASI.Name = "installYimASI";
-            installYimASI.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            installYimASI.Size = new Size(141, 45);
+            installYimASI.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            installYimASI.Size = new Size(155, 45);
             installYimASI.TabIndex = 3;
             installYimASI.Text = "Install YimASI";
             installYimASI.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            
             // 
             // installXMLs
             // 
             installXMLs.BorderRadius = 10;
-            installXMLs.CustomizableEdges = customizableEdges15;
+            installXMLs.CustomizableEdges = customizableEdges11;
             installXMLs.DisabledState.BorderColor = Color.DarkGray;
             installXMLs.DisabledState.CustomBorderColor = Color.DarkGray;
             installXMLs.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -332,10 +288,11 @@
             installXMLs.FillColor = Color.FromArgb(155, 0, 0);
             installXMLs.Font = new Font("Segoe UI", 9F);
             installXMLs.ForeColor = Color.White;
-            installXMLs.Location = new Point(153, 6);
+            installXMLs.Location = new Point(173, 6);
+            installXMLs.Margin = new Padding(6);
             installXMLs.Name = "installXMLs";
-            installXMLs.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            installXMLs.Size = new Size(141, 45);
+            installXMLs.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            installXMLs.Size = new Size(155, 45);
             installXMLs.TabIndex = 2;
             installXMLs.Text = "Install XML's";
             installXMLs.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
@@ -343,7 +300,7 @@
             // downloadAnimations
             // 
             downloadAnimations.BorderRadius = 10;
-            downloadAnimations.CustomizableEdges = customizableEdges17;
+            downloadAnimations.CustomizableEdges = customizableEdges13;
             downloadAnimations.DisabledState.BorderColor = Color.DarkGray;
             downloadAnimations.DisabledState.CustomBorderColor = Color.DarkGray;
             downloadAnimations.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -352,9 +309,10 @@
             downloadAnimations.Font = new Font("Segoe UI", 9F);
             downloadAnimations.ForeColor = Color.White;
             downloadAnimations.Location = new Point(6, 6);
+            downloadAnimations.Margin = new Padding(6);
             downloadAnimations.Name = "downloadAnimations";
-            downloadAnimations.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            downloadAnimations.Size = new Size(141, 45);
+            downloadAnimations.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            downloadAnimations.Size = new Size(155, 45);
             downloadAnimations.TabIndex = 1;
             downloadAnimations.Text = "Install Animations";
             downloadAnimations.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
@@ -390,14 +348,14 @@
             // 
             progressBar1.AutoRoundedCorners = true;
             progressBar1.BorderRadius = 10;
-            progressBar1.CustomizableEdges = customizableEdges19;
+            progressBar1.CustomizableEdges = customizableEdges15;
             progressBar1.FillColor = Color.FromArgb(20, 20, 20);
             progressBar1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             progressBar1.Location = new Point(408, 53);
             progressBar1.Name = "progressBar1";
             progressBar1.ProgressColor = Color.FromArgb(155, 0, 0);
             progressBar1.ProgressColor2 = Color.FromArgb(157, 74, 40);
-            progressBar1.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            progressBar1.ShadowDecoration.CustomizableEdges = customizableEdges16;
             progressBar1.ShowText = true;
             progressBar1.Size = new Size(300, 22);
             progressBar1.TabIndex = 4;
@@ -416,7 +374,7 @@
             logoImage.Location = new Point(523, -1);
             logoImage.Name = "logoImage";
             logoImage.PressedState.ImageSize = new Size(64, 64);
-            logoImage.ShadowDecoration.CustomizableEdges = customizableEdges21;
+            logoImage.ShadowDecoration.CustomizableEdges = customizableEdges17;
             logoImage.Size = new Size(71, 53);
             logoImage.TabIndex = 5;
             // 
@@ -459,7 +417,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             guna2TabControl1.ResumeLayout(false);
             YimMenu_Tab.ResumeLayout(false);
-            LuaScripts_Tab.ResumeLayout(false);
             Addons_Tab.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -479,9 +436,7 @@
         private Guna.UI2.WinForms.Guna2ImageButton logoImage;
         private Guna.UI2.WinForms.Guna2HtmlLabel programTitle;
         private Guna.UI2.WinForms.Guna2Button howToGuide;
-        private Guna.UI2.WinForms.Guna2Button downloadExtras;
         private TabPage Addons_Tab;
-        private Guna.UI2.WinForms.Guna2Button downloadUltimateMenu;
         private Guna.UI2.WinForms.Guna2Button installYimASI;
         private Guna.UI2.WinForms.Guna2Button installXMLs;
         private Guna.UI2.WinForms.Guna2Button downloadAnimations;
