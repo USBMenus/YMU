@@ -301,18 +301,28 @@ namespace YimUpdater
                     // Extract the zip file to the specified directory
                     try
                     {
-                        ZipFile.ExtractToDirectory(zipFilePath, extractDirectory);
-                        MessageBox.Show(fileName + " Download completed!\n\n Extracted " + fileName + " to " + extractDirectory);
+                        // Ensure the extractDirectory exists
+                        Directory.CreateDirectory(extractDirectory);
+
+                        // Extract the zip file, overwriting existing files if any
+                        ZipFile.ExtractToDirectory(zipFilePath, extractDirectory, true);
+
+                        MessageBox.Show($"{fileName} Download completed!\n\n Extracted {fileName} to {extractDirectory}");
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error extracting zip file: " + ex.Message);
+                        MessageBox.Show($"Error extracting zip file: {ex.Message}");
+                    }
+                    finally
+                    {
+                        // Clean up: Delete the downloaded zip file
+                        File.Delete(zipFilePath);
                     }
                 };
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error downloading file: " + ex.Message);
+                MessageBox.Show($"Error downloading file: {ex.Message}");
                 progressBar1.Visible = false;
             }
         }
