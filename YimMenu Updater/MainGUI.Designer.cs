@@ -80,9 +80,6 @@
             pictureBox1.Size = new Size(393, 44);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            pictureBox1.MouseDown += TitleBarMouseDown;
-            pictureBox1.MouseMove += TitleBarDrag;
-            pictureBox1.MouseUp += TitleBarMouseUp;
             // 
             // CloseBtn
             // 
@@ -99,9 +96,6 @@
             CloseBtn.Size = new Size(105, 35);
             CloseBtn.TabIndex = 2;
             CloseBtn.UseVisualStyleBackColor = false;
-            CloseBtn.Click += CloseBtn_Click;
-            CloseBtn.MouseLeave += CloseBtn_Leave;
-            CloseBtn.MouseHover += CloseBtn_Hover;
             // 
             // minBtn
             // 
@@ -117,9 +111,6 @@
             minBtn.Size = new Size(105, 35);
             minBtn.TabIndex = 3;
             minBtn.UseVisualStyleBackColor = false;
-            minBtn.Click += MinBtn_Click;
-            minBtn.MouseLeave += MinBtn_Leave;
-            minBtn.MouseHover += MinBtn_Hover;
             // 
             // guna2TabControl1
             // 
@@ -187,7 +178,6 @@
             howToGuide.Size = new Size(155, 45);
             howToGuide.TabIndex = 3;
             howToGuide.Text = "YimMenu How-To";
-            howToGuide.Click += howToGuide_Click;
             // 
             // uninstallYimMenu
             // 
@@ -207,7 +197,6 @@
             uninstallYimMenu.Size = new Size(155, 45);
             uninstallYimMenu.TabIndex = 2;
             uninstallYimMenu.Text = "Uninstall YimMenu";
-            uninstallYimMenu.Click += uninstallYimMenu_Click;
             // 
             // deleteCache
             // 
@@ -227,7 +216,6 @@
             deleteCache.Size = new Size(155, 45);
             deleteCache.TabIndex = 1;
             deleteCache.Text = "Delete Cache";
-            deleteCache.Click += deleteCache_Click;
             // 
             // downloadYimMenu
             // 
@@ -247,7 +235,6 @@
             downloadYimMenu.Size = new Size(155, 45);
             downloadYimMenu.TabIndex = 0;
             downloadYimMenu.Text = "Download YimMenu";
-            downloadYimMenu.Click += downloadYimMenu_Click;
             // 
             // LuaScripts_Tab
             // 
@@ -289,7 +276,6 @@
             installYimASI.TabIndex = 3;
             installYimASI.Text = "Install YimASI";
             installYimASI.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            installYimASI.Click += installYimASI_Click;
             // 
             // installXMLs
             // 
@@ -310,7 +296,6 @@
             installXMLs.TabIndex = 2;
             installXMLs.Text = "Install XML's";
             installXMLs.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            installXMLs.Click += installXMLs_Click;
             // 
             // downloadAnimations
             // 
@@ -331,7 +316,6 @@
             downloadAnimations.TabIndex = 1;
             downloadAnimations.Text = "Install Animations";
             downloadAnimations.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            downloadAnimations.Click += downloadAnimations_Click;
             // 
             // HorseMenu_Tab
             // 
