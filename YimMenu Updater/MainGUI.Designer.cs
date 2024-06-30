@@ -43,11 +43,17 @@ namespace YimUpdater
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pictureBox1 = new PictureBox();
             CloseBtn = new Button();
             minBtn = new Button();
@@ -63,17 +69,21 @@ namespace YimUpdater
             installXMLs = new Guna.UI2.WinForms.Guna2Button();
             downloadAnimations = new Guna.UI2.WinForms.Guna2Button();
             HorseMenu_Tab = new TabPage();
+            downloadHorseMenu = new Guna.UI2.WinForms.Guna2Button();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
             progressBar1 = new Guna.UI2.WinForms.Guna2ProgressBar();
             logoImage = new Guna.UI2.WinForms.Guna2ImageButton();
             programTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            downloadHorseMenu = new Guna.UI2.WinForms.Guna2Button();
+            processName = new Guna.UI2.WinForms.Guna2TextBox();
+            launchGame = new Guna.UI2.WinForms.Guna2Button();
+            injectDLL = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             guna2TabControl1.SuspendLayout();
             YimMenu_Tab.SuspendLayout();
             Addons_Tab.SuspendLayout();
             HorseMenu_Tab.SuspendLayout();
+            tabPage1.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox1
@@ -331,71 +341,6 @@ namespace YimUpdater
             HorseMenu_Tab.TabIndex = 3;
             HorseMenu_Tab.Text = "HorseMenu";
             // 
-            // tabPage1
-            // 
-            tabPage1.BackColor = Color.FromArgb(30, 30, 30);
-            tabPage1.Location = new Point(4, 44);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Size = new Size(1036, 492);
-            tabPage1.TabIndex = 4;
-            tabPage1.Text = "Tools";
-            // 
-            // tabPage2
-            // 
-            tabPage2.BackColor = Color.FromArgb(30, 30, 30);
-            tabPage2.Location = new Point(4, 44);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Size = new Size(1036, 492);
-            tabPage2.TabIndex = 5;
-            tabPage2.Text = "Settings";
-            // 
-            // progressBar1
-            // 
-            progressBar1.AutoRoundedCorners = true;
-            progressBar1.BorderRadius = 10;
-            progressBar1.CustomizableEdges = customizableEdges17;
-            progressBar1.FillColor = Color.FromArgb(20, 20, 20);
-            progressBar1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
-            progressBar1.Location = new Point(408, 53);
-            progressBar1.Name = "progressBar1";
-            progressBar1.ProgressColor = Color.FromArgb(155, 0, 0);
-            progressBar1.ProgressColor2 = Color.FromArgb(157, 74, 40);
-            progressBar1.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            progressBar1.ShowText = true;
-            progressBar1.Size = new Size(300, 22);
-            progressBar1.TabIndex = 4;
-            progressBar1.Text = "progressBar1";
-            progressBar1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            progressBar1.Visible = false;
-            // 
-            // logoImage
-            // 
-            logoImage.BackColor = Color.Transparent;
-            logoImage.CheckedState.ImageSize = new Size(64, 64);
-            logoImage.HoverState.ImageSize = new Size(64, 64);
-            logoImage.Image = YimMenu_Updater.Properties.Resources.icon;
-            logoImage.ImageOffset = new Point(0, 0);
-            logoImage.ImageRotate = 0F;
-            logoImage.Location = new Point(523, -1);
-            logoImage.Name = "logoImage";
-            logoImage.PressedState.ImageSize = new Size(64, 64);
-            logoImage.ShadowDecoration.CustomizableEdges = customizableEdges19;
-            logoImage.Size = new Size(71, 53);
-            logoImage.TabIndex = 5;
-            // 
-            // programTitle
-            // 
-            programTitle.BackColor = Color.FromArgb(155, 0, 0);
-            programTitle.BackgroundImageLayout = ImageLayout.None;
-            programTitle.Enabled = false;
-            programTitle.Font = new Font("Segoe UI", 14.25F);
-            programTitle.ForeColor = Color.White;
-            programTitle.Location = new Point(60, 12);
-            programTitle.Name = "programTitle";
-            programTitle.Size = new Size(157, 27);
-            programTitle.TabIndex = 6;
-            programTitle.Text = "YimMenu Updater";
-            // 
             // downloadHorseMenu
             // 
             downloadHorseMenu.BorderRadius = 10;
@@ -415,6 +360,139 @@ namespace YimUpdater
             downloadHorseMenu.TabIndex = 4;
             downloadHorseMenu.Text = "Download HorseMenu";
             downloadHorseMenu.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // tabPage1
+            // 
+            tabPage1.BackColor = Color.FromArgb(30, 30, 30);
+            tabPage1.Controls.Add(injectDLL);
+            tabPage1.Controls.Add(launchGame);
+            tabPage1.Controls.Add(processName);
+            tabPage1.Location = new Point(4, 44);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Size = new Size(1036, 492);
+            tabPage1.TabIndex = 4;
+            tabPage1.Text = "Tools";
+            // 
+            // tabPage2
+            // 
+            tabPage2.BackColor = Color.FromArgb(30, 30, 30);
+            tabPage2.Location = new Point(4, 44);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Size = new Size(1036, 492);
+            tabPage2.TabIndex = 5;
+            tabPage2.Text = "Settings";
+            // 
+            // progressBar1
+            // 
+            progressBar1.AutoRoundedCorners = true;
+            progressBar1.BorderRadius = 10;
+            progressBar1.CustomizableEdges = customizableEdges23;
+            progressBar1.FillColor = Color.FromArgb(20, 20, 20);
+            progressBar1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            progressBar1.Location = new Point(408, 53);
+            progressBar1.Name = "progressBar1";
+            progressBar1.ProgressColor = Color.FromArgb(155, 0, 0);
+            progressBar1.ProgressColor2 = Color.FromArgb(157, 74, 40);
+            progressBar1.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            progressBar1.ShowText = true;
+            progressBar1.Size = new Size(300, 22);
+            progressBar1.TabIndex = 4;
+            progressBar1.Text = "progressBar1";
+            progressBar1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            progressBar1.Visible = false;
+            // 
+            // logoImage
+            // 
+            logoImage.BackColor = Color.Transparent;
+            logoImage.CheckedState.ImageSize = new Size(64, 64);
+            logoImage.HoverState.ImageSize = new Size(64, 64);
+            logoImage.Image = YimMenu_Updater.Properties.Resources.icon;
+            logoImage.ImageOffset = new Point(0, 0);
+            logoImage.ImageRotate = 0F;
+            logoImage.Location = new Point(523, -1);
+            logoImage.Name = "logoImage";
+            logoImage.PressedState.ImageSize = new Size(64, 64);
+            logoImage.ShadowDecoration.CustomizableEdges = customizableEdges25;
+            logoImage.Size = new Size(71, 53);
+            logoImage.TabIndex = 5;
+            // 
+            // programTitle
+            // 
+            programTitle.BackColor = Color.FromArgb(155, 0, 0);
+            programTitle.BackgroundImageLayout = ImageLayout.None;
+            programTitle.Enabled = false;
+            programTitle.Font = new Font("Segoe UI", 14.25F);
+            programTitle.ForeColor = Color.White;
+            programTitle.Location = new Point(60, 12);
+            programTitle.Name = "programTitle";
+            programTitle.Size = new Size(157, 27);
+            programTitle.TabIndex = 6;
+            programTitle.Text = "YimMenu Updater";
+            // 
+            // processName
+            // 
+            processName.BorderColor = Color.FromArgb(155, 0, 0);
+            processName.BorderRadius = 10;
+            processName.BorderThickness = 2;
+            processName.CustomizableEdges = customizableEdges21;
+            processName.DefaultText = "";
+            processName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            processName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            processName.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            processName.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            processName.FillColor = Color.FromArgb(55, 55, 55);
+            processName.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            processName.Font = new Font("Segoe UI", 9F);
+            processName.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            processName.Location = new Point(6, 6);
+            processName.Margin = new Padding(6);
+            processName.Name = "processName";
+            processName.PasswordChar = '\0';
+            processName.PlaceholderText = "Enter a Process name (Ex:  GTA5.exe)";
+            processName.SelectedText = "";
+            processName.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            processName.Size = new Size(322, 45);
+            processName.TabIndex = 0;
+            // 
+            // launchGame
+            // 
+            launchGame.BorderRadius = 10;
+            launchGame.CustomizableEdges = customizableEdges19;
+            launchGame.DisabledState.BorderColor = Color.DarkGray;
+            launchGame.DisabledState.CustomBorderColor = Color.DarkGray;
+            launchGame.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            launchGame.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            launchGame.FillColor = Color.FromArgb(0, 155, 0);
+            launchGame.Font = new Font("Segoe UI", 9F);
+            launchGame.ForeColor = Color.White;
+            launchGame.Location = new Point(340, 6);
+            launchGame.Margin = new Padding(6);
+            launchGame.Name = "launchGame";
+            launchGame.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            launchGame.Size = new Size(155, 45);
+            launchGame.TabIndex = 5;
+            launchGame.Text = "Launch Game";
+            launchGame.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // injectDLL
+            // 
+            injectDLL.BorderRadius = 10;
+            injectDLL.CustomizableEdges = customizableEdges17;
+            injectDLL.DisabledState.BorderColor = Color.DarkGray;
+            injectDLL.DisabledState.CustomBorderColor = Color.DarkGray;
+            injectDLL.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            injectDLL.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            injectDLL.FillColor = Color.FromArgb(155, 0, 0);
+            injectDLL.Font = new Font("Segoe UI", 9F);
+            injectDLL.ForeColor = Color.White;
+            injectDLL.Location = new Point(509, 6);
+            injectDLL.Margin = new Padding(6);
+            injectDLL.Name = "injectDLL";
+            injectDLL.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            injectDLL.Size = new Size(155, 45);
+            injectDLL.TabIndex = 6;
+            injectDLL.Text = "Select/Inject DLL";
+            injectDLL.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
             // MainGUI
             // 
@@ -444,6 +522,7 @@ namespace YimUpdater
             YimMenu_Tab.ResumeLayout(false);
             Addons_Tab.ResumeLayout(false);
             HorseMenu_Tab.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -472,5 +551,8 @@ namespace YimUpdater
         private Guna.UI2.WinForms.Guna2ProgressBar progressBar1;
         private Guna.UI2.WinForms.Guna2ProgressBar guna2ProgressBar1;
         private Guna.UI2.WinForms.Guna2Button downloadHorseMenu;
+        private Guna.UI2.WinForms.Guna2TextBox processName;
+        private Guna.UI2.WinForms.Guna2Button injectDLL;
+        private Guna.UI2.WinForms.Guna2Button launchGame;
     }
 }
