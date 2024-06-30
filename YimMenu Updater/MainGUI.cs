@@ -1,26 +1,10 @@
-﻿using Microsoft.VisualBasic.Devices;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
+﻿using System.Data;
 using System.Resources;
-using System.Runtime.Versioning;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
-using System.IO;
-using System.Net.Http;
 using System.Net;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.IO.Compression;
-using Microsoft.Win32;
 using System.Diagnostics;
 using System.Reflection;
 using System.Security.Principal;
-using System.Collections.Generic;
 using Newtonsoft.Json;
 using Guna.UI2.WinForms;
 
@@ -40,24 +24,6 @@ namespace YimUpdater
         private void MainGUI_Load(object sender, EventArgs e)
         {
             var rm = new ResourceManager("Images", this.GetType().Assembly);
-            CloseBtn.MouseLeave += CloseBtn_Leave;
-            CloseBtn.MouseHover += CloseBtn_Hover;
-            CloseBtn.Click += CloseBtn_Click;
-            minBtn.MouseLeave += MinBtn_Leave;
-            minBtn.MouseHover += MinBtn_Hover;
-            minBtn.Click += MinBtn_Click;
-            pictureBox1.MouseUp += TitleBarMouseUp;
-            pictureBox1.MouseMove += TitleBarDrag;
-            pictureBox1.MouseDown += TitleBarMouseDown;
-            howToGuide.Click += howToGuide_Click;
-            uninstallYimMenu.Click += uninstallYimMenu_Click;
-            deleteCache.Click += deleteCache_Click;
-            downloadYimMenu.Click += downloadYimMenu_Click;
-            //downloadUltimateMenu.Click += downloadUltimateMenu_Click;
-            //downloadExtras.Click += downloadExtras_Click;
-            downloadAnimations.Click += downloadAnimations_Click;
-            installXMLs.Click += installXMLs_Click;
-            installYimASI.Click += installYimASI_Click;
         }
 
         private void CloseBtn_Click(object? sender, EventArgs e)
@@ -144,7 +110,7 @@ namespace YimUpdater
             string dllUrl = "https://github.com/YimMenu/YimMenu/releases/download/nightly/YimMenu.dll";
             string dllPath = Path.Combine(downloadsFolder, "YimMenu.dll");
 
-            DownloadFile(dllUrl, dllPath, "YimMenu.dll downloaded to ");
+            DownloadFile(dllUrl, dllPath, "YimMenu.dll downloaded to ", true);
         }
 
         private void uninstallYimMenu_Click(object sender, EventArgs e)
@@ -168,8 +134,27 @@ namespace YimUpdater
             ShowHowToGuide();
         }
 
-        private void DownloadFile(string url, string path, string successMessage)
+        private void DownloadFile(string url, string path, string successMessage, bool ofd = false)
         {
+            if (ofd)
+            {
+                FolderBrowserDialog fbd = new FolderBrowserDialog();
+                fbd.Description = "Select Download Location";
+                DialogResult result = fbd.ShowDialog();
+
+                if (result != DialogResult.OK)
+                    MessageBox.Show("You canceled the download.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+
+                path = fbd.SelectedPath;
+
+                if (string.IsNullOrEmpty(path))
+                {
+                    MessageBox.Show("Download location cannot be empty.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+            }
+
             WebClient client = new WebClient();
 
             // Subscribe to the DownloadProgressChanged event to update the progress bar
@@ -203,6 +188,10 @@ namespace YimUpdater
 
         private void DeleteDirectory(string path, string successMessage)
         {
+            DialogResult result = MessageBox.Show("Are you sure you want to delete \'" + path + "\'?\nThis can NOT be undone!", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.No) 
+                return;
+
             try
             {
                 if (Directory.Exists(path))
