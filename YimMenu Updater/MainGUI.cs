@@ -143,8 +143,10 @@ namespace YimUpdater
                 DialogResult result = fbd.ShowDialog();
 
                 if (result != DialogResult.OK)
+                {
                     MessageBox.Show("You canceled the download.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                    return;
+                }
 
                 path = fbd.SelectedPath;
 
