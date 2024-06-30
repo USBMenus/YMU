@@ -43,9 +43,11 @@ namespace YimUpdater
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pictureBox1 = new PictureBox();
             CloseBtn = new Button();
             minBtn = new Button();
@@ -66,10 +68,12 @@ namespace YimUpdater
             progressBar1 = new Guna.UI2.WinForms.Guna2ProgressBar();
             logoImage = new Guna.UI2.WinForms.Guna2ImageButton();
             programTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            downloadHorseMenu = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             guna2TabControl1.SuspendLayout();
             YimMenu_Tab.SuspendLayout();
             Addons_Tab.SuspendLayout();
+            HorseMenu_Tab.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox1
@@ -336,6 +340,7 @@ namespace YimUpdater
             // HorseMenu_Tab
             // 
             HorseMenu_Tab.BackColor = Color.FromArgb(30, 30, 30);
+            HorseMenu_Tab.Controls.Add(downloadHorseMenu);
             HorseMenu_Tab.Location = new Point(4, 44);
             HorseMenu_Tab.Name = "HorseMenu_Tab";
             HorseMenu_Tab.Size = new Size(1036, 492);
@@ -364,14 +369,14 @@ namespace YimUpdater
             // 
             progressBar1.AutoRoundedCorners = true;
             progressBar1.BorderRadius = 10;
-            progressBar1.CustomizableEdges = customizableEdges15;
+            progressBar1.CustomizableEdges = customizableEdges17;
             progressBar1.FillColor = Color.FromArgb(20, 20, 20);
             progressBar1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             progressBar1.Location = new Point(408, 53);
             progressBar1.Name = "progressBar1";
             progressBar1.ProgressColor = Color.FromArgb(155, 0, 0);
             progressBar1.ProgressColor2 = Color.FromArgb(157, 74, 40);
-            progressBar1.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            progressBar1.ShadowDecoration.CustomizableEdges = customizableEdges18;
             progressBar1.ShowText = true;
             progressBar1.Size = new Size(300, 22);
             progressBar1.TabIndex = 4;
@@ -390,7 +395,7 @@ namespace YimUpdater
             logoImage.Location = new Point(523, -1);
             logoImage.Name = "logoImage";
             logoImage.PressedState.ImageSize = new Size(64, 64);
-            logoImage.ShadowDecoration.CustomizableEdges = customizableEdges17;
+            logoImage.ShadowDecoration.CustomizableEdges = customizableEdges19;
             logoImage.Size = new Size(71, 53);
             logoImage.TabIndex = 5;
             // 
@@ -406,6 +411,27 @@ namespace YimUpdater
             programTitle.Size = new Size(157, 27);
             programTitle.TabIndex = 6;
             programTitle.Text = "YimMenu Updater";
+            // 
+            // downloadHorseMenu
+            // 
+            downloadHorseMenu.BorderRadius = 10;
+            downloadHorseMenu.CustomizableEdges = customizableEdges15;
+            downloadHorseMenu.DisabledState.BorderColor = Color.DarkGray;
+            downloadHorseMenu.DisabledState.CustomBorderColor = Color.DarkGray;
+            downloadHorseMenu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            downloadHorseMenu.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            downloadHorseMenu.FillColor = Color.FromArgb(155, 0, 0);
+            downloadHorseMenu.Font = new Font("Segoe UI", 9F);
+            downloadHorseMenu.ForeColor = Color.White;
+            downloadHorseMenu.Location = new Point(6, 6);
+            downloadHorseMenu.Margin = new Padding(6);
+            downloadHorseMenu.Name = "downloadHorseMenu";
+            downloadHorseMenu.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            downloadHorseMenu.Size = new Size(155, 45);
+            downloadHorseMenu.TabIndex = 4;
+            downloadHorseMenu.Text = "Download HorseMenu";
+            downloadHorseMenu.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            downloadHorseMenu.Click += downloadHorseMenu_Click;
             // 
             // MainGUI
             // 
@@ -434,6 +460,7 @@ namespace YimUpdater
             guna2TabControl1.ResumeLayout(false);
             YimMenu_Tab.ResumeLayout(false);
             Addons_Tab.ResumeLayout(false);
+            HorseMenu_Tab.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -461,5 +488,6 @@ namespace YimUpdater
         private TabPage tabPage2;
         private Guna.UI2.WinForms.Guna2ProgressBar progressBar1;
         private Guna.UI2.WinForms.Guna2ProgressBar guna2ProgressBar1;
+        private Guna.UI2.WinForms.Guna2Button downloadHorseMenu;
     }
 }
