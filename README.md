@@ -6,8 +6,8 @@ YimMenu Updater is an All-in-One Updater/Downloader for YimMenu, designed to sim
 
 ### YimMenu
 - Download YimMenu
-- Uninstalling YimMenu
-- Deleting YimMenu Cache
+- Uninstall YimMenu
+- Delete YimMenu Cache
 - How to Use Guide
 
 ### Lua Scripts
