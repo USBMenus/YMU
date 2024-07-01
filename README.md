@@ -21,3 +21,8 @@ YimMenu Updater is an All-in-One Updater/Downloader for YimMenu, designed to sim
 
 ### HorseMenu
 - Download HorseMenu
+
+### Tools
+- Process Name (GTA5, RDR2, Minecraft.Windows, etc.)
+- Launch Game -> Launches the chosen process
+- Select/Inject DLL 
