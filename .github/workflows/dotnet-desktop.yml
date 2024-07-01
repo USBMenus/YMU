@@ -36,15 +36,18 @@ jobs:
 
     - name: Locate Build Output
       id: locate_build
-      run: echo "::set-output name=build_path::$(ls -d 'YMU/YimMenu Updater/bin/Release')"
+      run: |
+        $buildPath = Get-ChildItem -Directory -Path $Env:GITHUB_WORKSPACE -Recurse -Filter "Release" | Select-Object -First 1 -ExpandProperty FullName
+        Write-Host "::set-output name=build_path::$buildPath"
+      shell: pwsh
 
     - name: Archive build output
       run: |
         $buildPath = '${{ steps.locate_build.outputs.build_path }}'
         echo "Build path: $buildPath"
         mkdir build
-        cp -r $buildPath/* build/
-        tar -czvf build.tar.gz -C build .
+        Copy-Item -Path "$buildPath\*" -Destination build -Recurse
+        Compress-Archive -Path build/* -DestinationPath build.zip
       shell: pwsh
 
     - name: Create Release
@@ -64,6 +67,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./build.tar.gz
-        asset_name: build.tar.gz
-        asset_content_type: application/gzip
+        asset_path: ./build.zip
+        asset_name: build.zip
+        asset_content_type: application/zip
