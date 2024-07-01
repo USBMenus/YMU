@@ -78,7 +78,7 @@ jobs:
       
     # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
     - name: Build
-      run: dontnet build --configuration Release
+      run: dotnet build --configuration Release
 
     # Execute all unit tests in the solution
     - name: tests
