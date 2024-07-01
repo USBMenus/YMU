@@ -36,7 +36,7 @@ jobs:
 
     - name: Locate Build Output
       id: locate_build
-      run: echo "::set-output name=build_path::$(ls -d YMU/YimMenu Updater/bin/Release)"
+      run: echo "::set-output name=build_path::$(ls -d 'YMU/YimMenu Updater/bin/Release')"
 
     - name: Archive build output
       run: |
