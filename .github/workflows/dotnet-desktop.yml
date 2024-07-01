@@ -37,7 +37,7 @@ jobs:
     - name: Locate Build Output
       id: locate_build
       run: |
-        $buildPath = Get-ChildItem -Directory -Path C:\ -Recurse -Filter "Release" | Select-Object -First 1 -ExpandProperty FullName
+        $buildPath = Get-ChildItem -Directory -Path D:\a\YMU\YMU\ -Recurse -Filter "Release" | Select-Object -First 1 -ExpandProperty FullName
         Write-Host "::set-output name=build_path::$buildPath"
       shell: pwsh
 
