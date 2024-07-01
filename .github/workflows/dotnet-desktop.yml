@@ -30,15 +30,22 @@ jobs:
 
     - name: Restore Dependencies
       run: dotnet restore
-      
+
     - name: Build
       run: dotnet build --configuration Release
 
+    - name: Locate Build Output
+      id: locate_build
+      run: echo "::set-output name=build_path::$(ls -d ${{ github.workspace }}/*/bin/Release)"
+
     - name: Archive build output
       run: |
+        $buildPath = '${{ steps.locate_build.outputs.build_path }}'
+        echo "Build path: $buildPath"
         mkdir build
-        cp -r bin/Release/* build/
+        cp -r $buildPath/* build/
         tar -czvf build.tar.gz -C build .
+      shell: pwsh
 
     - name: Create Release
       id: create_release
