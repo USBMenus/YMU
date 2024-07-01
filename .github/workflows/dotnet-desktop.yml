@@ -32,15 +32,12 @@ jobs:
       run: dotnet restore
 
     - name: Build
-      run: |
-        dotnet build --configuration Release --output build_output
+      run: dotnet build --configuration Release --output build_output
 
     - name: Archive build output
       run: |
         echo "Build path: $(pwd)/build_output"
-        mkdir build
-        Copy-Item -Path "build_output/*" -Destination build -Recurse
-        Compress-Archive -Path build/* -DestinationPath build.zip -CompressionLevel Optimal
+        Compress-Archive -Path build_output/* -DestinationPath build.zip -CompressionLevel Optimal
       shell: pwsh
 
     - name: Get current date
@@ -50,7 +47,7 @@ jobs:
 
     - name: Create Release
       id: create_release
-      uses: actions/create-release@v3
+      uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
@@ -60,7 +57,7 @@ jobs:
         prerelease: false
 
     - name: Upload Release Asset
-      uses: actions/upload-release-asset@v3
+      uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
